@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>독서 포트폴리오</title>
+	<style>
+		@font-face {
+			font-family: 'NotoSansCJKkr-regular';
+			src: url('fonts/NotoSansCJKkr-regular.otf') format('opentype'); 
+		}
+		html {
+			font-family: 'NotoSansCJKkr-regular';
+		}
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			background: #F8F8F8;
+		}
+		#potfolio {
+			margin: 0 auto;
+			margin-top: 100px;
+			width: 1180px;
+			margin-bottom: 300px;
+		}
+		.head-title {
+			text-align: center;
+			margin: 0 auto;
+		}
+		input {
+			border: none;
+			font-size: 22px;
+			width: 100px;
+			margin-top: 15px;
+			background: #F8F8F8;
+		}
+		input:focus {
+			outline: none;
+		}
+		.line {
+			width: 118px;
+			height: 7px;
+			background: #386138;
+			border-radius: 5px;
+			margin: 0 auto;
+			margin-top: 5px;
+		}
+		.description {
+			font-size: 16px;
+			margin-bottom: 50px;
+			margin-top: 5px;
+		}
+		title .h1 {
+			size: 36px;
+		}
+		.container {
+			border: 1px solid #707070;
+			border-radius: 22px;
+			height: 60px;
+			margin-bottom: 20px;
+		}
+		.info {
+			margin-bottom: 10px;
+			overflow: hidden;
+		}
+		.title {
+			width: 1178px;
+		}
+		#title {
+			width: 800px;
+		}
+		.writer {
+			width: 564px;
+			float: left;
+		}
+		#writer {
+			width: 400px;
+		}
+		.publisher {
+			width: 290px;
+			float: left;
+			margin-left: 25px;
+		}
+		#publisher {
+			width: 180px;
+		}
+		.date {
+			float: right;
+			width: 270px;
+		}
+		#date {
+			width: 150px;
+		}
+		label {
+			color: black;
+			font-size: 22px;
+			margin-left: 10px;
+			margin-top: 20px;
+		}
+		.main-container {
+			clear: both;
+			margin-top: 50px;
+			min-height: 759px;
+			height: auto;
+			overflow: auto;
+			box-shadow: 0px 3px 18px #707070;
+			padding-left: 48px;
+			padding-top: 70px;
+			border-radius: 72px;
+		}
+		textarea {
+			width: 1084px;
+			min-height: 612px;
+			height: auto;
+			font-size: 24px;
+			font-family: 'NotoSansCJKkr-regular';
+			border: none;
+			overflow: auto;
+			resize: none;
+			background: #F8F8F8;
+		}
+		textarea:focus {
+			outline: none;
+		}
+		.end {
+			text-align: right;
+		}
+		#save, #alter {
+			background: #F5F5F5;
+			width: 112px;
+			height: 60px;
+			border-radius: 34px;
+			margin-top: 50px;
+			color: black;
+			box-shadow: 0px 3px 3px #707070;
+			font-size: 19px;
+			margin-left: 30px;
+		}
+		#save:hover, #alter:hover {
+			background: #386138;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="potfolio">
+		<div class="head-title">
+			<h1>독서 포트폴리오</h1>
+			<div class="line"></div>
+			<p class="description">책에서만 쓴 독서 포트폴리오를<br/>
+			미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
+		</div>
+		<div class="info">
+			<div class="title container">
+				<label for="title">책 제목</label>
+				<input type="text" name="title" id="title" />
+			</div>
+			<div class="writer container">
+				<label for="writer">저자</label>
+				<input type="text" name="writer" id="writer" />
+			</div>
+			<div class="publisher container">
+				<label for="publisher">출판사</label>
+				<input type="text" name="publisher" id="publisher" />
+			</div>
+			<div class="date container">
+				<label for="date">읽은 날짜</label>
+				<input type="text" name="date" id="date" />
+			</div>
+		</div>
+		<div class="main-container">
+			<textarea name="main" placeholder="내용" id="main"></textarea>
+		</div>
+		<div class="end">
+			<input type="button" value="수정" id="alter">
+			<input type="submit" value="저장" id="save">
+		</div>
+	</div>
+</body>
+</html>
