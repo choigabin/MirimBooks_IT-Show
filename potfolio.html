@@ -3,145 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>독서 포트폴리오</title>
-	<style>
-		@font-face {
-			font-family: 'NotoSansCJKkr-regular';
-			src: url('fonts/NotoSansCJKkr-regular.otf') format('opentype'); 
-		}
-		html {
-			font-family: 'NotoSansCJKkr-regular';
-		}
-		* {
-			padding: 0;
-			margin: 0;
-		}
-		body {
-			background: #F8F8F8;
-		}
-		#potfolio {
-			margin: 0 auto;
-			margin-top: 100px;
-			width: 1180px;
-			margin-bottom: 300px;
-		}
-		.head-title {
-			text-align: center;
-			margin: 0 auto;
-		}
-		input {
-			border: none;
-			font-size: 22px;
-			width: 100px;
-			margin-top: 15px;
-			background: #F8F8F8;
-		}
-		input:focus {
-			outline: none;
-		}
-		.line {
-			width: 118px;
-			height: 7px;
-			background: #386138;
-			border-radius: 5px;
-			margin: 0 auto;
-			margin-top: 5px;
-		}
-		.description {
-			font-size: 16px;
-			margin-bottom: 50px;
-			margin-top: 5px;
-		}
-		title .h1 {
-			size: 36px;
-		}
-		.container {
-			border: 1px solid #707070;
-			border-radius: 22px;
-			height: 60px;
-			margin-bottom: 20px;
-		}
-		.info {
-			margin-bottom: 10px;
-			overflow: hidden;
-		}
-		.title {
-			width: 1178px;
-		}
-		#title {
-			width: 800px;
-		}
-		.writer {
-			width: 564px;
-			float: left;
-		}
-		#writer {
-			width: 400px;
-		}
-		.publisher {
-			width: 290px;
-			float: left;
-			margin-left: 25px;
-		}
-		#publisher {
-			width: 180px;
-		}
-		.date {
-			float: right;
-			width: 270px;
-		}
-		#date {
-			width: 150px;
-		}
-		label {
-			color: black;
-			font-size: 22px;
-			margin-left: 10px;
-			margin-top: 20px;
-		}
-		.main-container {
-			clear: both;
-			margin-top: 50px;
-			min-height: 759px;
-			height: auto;
-			overflow: auto;
-			box-shadow: 0px 3px 18px #707070;
-			padding-left: 48px;
-			padding-top: 70px;
-			border-radius: 72px;
-		}
-		textarea {
-			width: 1084px;
-			min-height: 612px;
-			height: auto;
-			font-size: 24px;
-			font-family: 'NotoSansCJKkr-regular';
-			border: none;
-			overflow: auto;
-			resize: none;
-			background: #F8F8F8;
-		}
-		textarea:focus {
-			outline: none;
-		}
-		.end {
-			text-align: right;
-		}
-		#save, #alter {
-			background: #F5F5F5;
-			width: 112px;
-			height: 60px;
-			border-radius: 34px;
-			margin-top: 50px;
-			color: black;
-			box-shadow: 0px 3px 3px #707070;
-			font-size: 19px;
-			margin-left: 30px;
-		}
-		#save:hover, #alter:hover {
-			background: #386138;
-			color: white;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="potfolio.css">
+	<script type="text/javascript">
+	function cmaTextareaSize(obj, bsize) {
+		let sTextarea = document.getElementById(obj);
+		let csize = (sTextarea.scrollHeight >= bsize) ? sTextarea.scrollHeight+"px" : bsize+"px";
+		sTextarea.style.height=bsize+"px";
+		sTextarea.style.height = csize;
+	}
+	</script>
 </head>
 <body>
 	<div id="potfolio">
@@ -170,7 +40,7 @@
 			</div>
 		</div>
 		<div class="main-container">
-			<textarea name="main" placeholder="내용" id="main"></textarea>
+			<textarea name="main" placeholder="내용" id="main" class="textarea_size" onchange="cmaTextareaSize('main', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea><script>cmaTextareaSize('main', 612);</script>
 		</div>
 		<div class="end">
 			<input type="button" value="수정" id="alter">
