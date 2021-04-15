@@ -9,6 +9,9 @@
 html {
 	font-family: 'NotoSansCJKkr-regular';
 }
+body {
+	background: #F8F8F8;
+}
 .index-container {
 	margin: 0 auto;
 	margin-top: 100px;
@@ -42,12 +45,12 @@ html {
 	height: 430px;
 	float: left;
 	background: #F7F7F7;
-	box-shadow: -6px -1px 10px #707070;
+	box-shadow: -6px -1px 8px #707070;
 }
 .input-box .input-text {
 	border: none;
 	width: 1080px;
-	height: 300px;
+	height: 310px;
 	margin-top: 20px;
 	margin-left: 20px;
 	resize: none;
@@ -73,13 +76,14 @@ html {
 	height: 104px;
 	background: #F7F7F7;
 	border: none;
-	box-shadow: 6px -1px 6px #707070;
+	box-shadow: 4px -1px 3px #707070;
 }
 .button-confirm {
 	width: 70px;
 	height: 104px;
 	background: #E6E6E6;
 	border: none;
+	box-shadow: 4px 1px 3px #707070 inset;
 }
 button:focus {
 	outline: none;
@@ -93,7 +97,7 @@ button:focus {
 	border-radius: 34px;
 	float: right;
 	margin-right: 40px;
-	margin-top: 10px;
+	margin-top: 30px;
 	border: none;
 	font-weight: bold;
 }
@@ -104,4 +108,55 @@ button:focus {
 }
 .save-btn:focus {
 	outline: none;
+}
+percent-box svg {
+	display: block;
+}
+.percent-container {
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.percent-all {
+	width: fit-content;
+	display: flex;
+	margin: 0 auto;
+	flex-direction: row;
+	align-items: center;
+}
+.percent-box {
+	margin: 0;
+	height: 500px;
+	width: 1180px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 100px;
+}
+.book {
+	text-align: center;
+	width: 350px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.bookinfo-container {
+	margin-top: 50px;
+}
+.bookname {
+	font-size: 20px;
+}
+.bookwriter {
+	font-size: 15px;
+	opacity: 0.7;
+}
+.page-percent {
+	font-size: 30px;
+	font-weight: lighter;
+}
+#user-page {
+	color: white;
+	background: #386138;
+	margin: 0;
+}
+.percent-all svg {
+	margin: 0;
 }
