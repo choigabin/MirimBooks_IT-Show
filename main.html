@@ -1,0 +1,317 @@
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>MIBOOKS</title>
+	<link href="image/mibooks_logo_bl.svg" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="main.html"><img src="image/mibooks_logo_wh.png" class="logo_wh"></a>
+			<ul>
+				<li><a href="#timer">타이머</a></li>
+				<li><a href="#index">인덱스</a></li>
+				<li><a href="#percent">독서진행률</a></li>
+				<li><a href="#book_list">목록</a></li>
+				<li><a href="potfolio.html">독서포트폴리오</a></li>
+			</ul>
+			<div class="search_data">
+				<input type="search" placeholder="관심 도서를 검색해주세요.">
+				<a href="search.html"><img src="image/search.svg"></a>
+			</div>
+			<a href="#plus"><img src="image/user.svg" class="plus"/></a>
+			<div id="plus" class="book-plus">
+				<div class="cancel-container"><a href="#" class="cancel">
+					<img src="image/cancel.svg">
+				</a>
+				</div>
+				<div class="plus-input-container">
+					<p class="plus-ment">도서 등록을 위해<br>아래 정보를  입력해주세요.</p>
+					<input type="text" id="plus-title" placeholder="책 제목">
+					<input type="text" id="plus-writer" placeholder="저자">
+					<input type="text" id="plus-publiser" placeholder="출판사">
+					<input type="text" id="plus-whole" placeholder="전체 페이지 수">
+					<input type="submit" id="plus-submit" class="plus-button" value="확인">
+				</div>
+			</div>
+			<a href="#popup"><img src="image/user.svg" class="user"/></a>
+			<!-- 로그인 팝업 -->
+			<div class="login-popup" id="popup">
+				<div class="cancel-container"><a href="#" class="cancel">
+					<img src="image/cancel.svg">
+				</a>
+				</div>
+				<img src="image/user.svg">								
+				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
+				<button class="login-button">
+					<img src="image/login_btn.svg">
+				</button>
+			</div>
+		</nav>
+	</header>
+	<!-- banner -->
+	<div class="banner">
+		<input type="radio" name="slide" id="slide01" checked>
+		<input type="radio" name="slide" id="slide02">
+		<input type="radio" name="slide" id="slide03">
+		<div class="slidewrap">
+			<ul class="slidelist">
+				<!-- 슬라이드 영역 -->
+				<li class="slideitem">
+					<a>
+						<div class="textbox">
+						</div>
+						<img src="image/banner_01.png">
+					</a>
+				</li>
+				<li class="slideitem">
+					<a>
+
+						<div class="textbox">
+						</div>
+						<img src="image/banner_02.png">
+					</a>
+				</li>
+				<li class="slideitem">
+					<a>
+
+						<div class="textbox">
+						</div>
+						<img src="image/banner_01.png">
+					</a>
+				</li class="slideitem">
+				<!-- 좌,우 슬라이드 버튼 -->
+				<div class="slide-control">
+					<div>
+						<label for="slide03" class="left"></label>
+						<label for="slide02" class="right"></label>
+					</div>
+					<div>
+						<label for="slide01" class="left"></label>
+						<label for="slide03" class="right"></label>
+					</div>
+					<div>
+						<label for="slide02" class="left"></label>
+						<label for="slide01" class="right"></label>
+					</div>
+				</div>
+			</ul>
+			<!-- 페이징 -->
+			<ul class="slide-pagelist">
+				<li><label for="slide01"></label></li>
+				<li><label for="slide02"></label></li>
+				<li><label for="slide03"></label></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- timer -->
+	<div id="timer" class="timer_area">
+		<div class="scroll"></div>
+		<div class="title">
+			<h1>타이머</h1>
+			<div class="line"></div>
+		</div>
+		<div id="clock" class="timer">
+			<ul class="time">
+				<li>
+					<h1 class="timer_box" id="hr">00</h1>
+					<div class="timer_text">HOURS</div>
+				</li>
+				<li>
+					<h1 class="timer_box" id="min">00</h1>
+					<div class="timer_text">MINUTES</div>
+				</li>
+				<li>
+					<h1 class="timer_box" id="sec">00</h1>
+					<div class="timer_text">SECONDS</div>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<div>
+				<button onclick="start()" id="start" class="btn start">
+					<img src="image/stop_off.svg" class="start">
+				</button>
+				<button onclick="stop()" id="stop" class="btn stop">
+					<img src="image/start_off.svg" alt="">
+				</button>
+				<button onclick="reset()" id="reset" class="btn stop">
+					<img src="image/reset_off.svg" alt="">
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- indext -->
+	<div id="index" class="index-container">
+		<div class="scroll"></div>
+		<div class="title">
+			<h1>인덱스</h1>
+			<div class="line"></div>
+			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
+		</div>
+		<div class="input-container">
+			<div class="input-box">
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text"></textarea>
+				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
+				<input class="save-btn" type="submit" name="save" value="저장" id="save">
+			</div>
+			<div class="button-container">
+				<button class="button-write" id="write">
+					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
+						<path id="Icon_awesome-pencil-alt" data-name="Icon awesome-pencil-alt"
+							d="M35.009,9.991l-3.241,3.241a.845.845,0,0,1-1.2,0l-7.8-7.8a.845.845,0,0,1,0-1.2L26.009.991a3.382,3.382,0,0,1,4.774,0l4.226,4.226A3.37,3.37,0,0,1,35.009,9.991ZM19.983,7.017,1.519,25.481.028,34.024a1.69,1.69,0,0,0,1.955,1.955l8.543-1.5L28.99,16.017a.845.845,0,0,0,0-1.2l-7.8-7.8a.853.853,0,0,0-1.2,0ZM8.726,23.9a.98.98,0,0,1,0-1.392L19.554,11.679a.984.984,0,0,1,1.392,1.392L10.118,23.9a.98.98,0,0,1-1.392,0ZM6.188,29.813H9.563v2.552l-4.535.795L2.841,30.973l.795-4.535H6.188Z"
+							transform="translate(-0.002 -0.005)" fill="#386138" />
+					</svg>
+				</button>
+				<button class="button-confirm" id="confirm">
+					<svg xmlns="http://www.w3.org/2000/svg" width="33.625" height="33.041" viewBox="0 0 33.625 33.041">
+						<g id="Icon_feather-check-circle" data-name="Icon feather-check-circle"
+							transform="translate(-1.497 -1.473)" opacity="0.1">
+							<path id="패스_20" data-name="패스 20" d="M33,16.62V18A15,15,0,1,1,24.105,4.29" fill="none"
+								stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+							<path id="패스_21" data-name="패스 21" d="M33,6,18,21.015l-4.5-4.5" fill="none" stroke="#000"
+								stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+						</g>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- percent -->
+	<div id="percent" class="percent-container">
+		<div class="scroll"></div>
+		<div class="title">
+			<h1>독서진행률</h1>
+			<div class="line"></div>
+			<p class="discription">읽고 있는 책의 독서진행률을 눈으로 확인해보세요.</p>
+		</div>
+		<div class="percent-all">
+			<svg xmlns="http://www.w3.org/2000/svg" width="18.947" height="33.895" viewBox="0 0 18.947 33.895">
+				<path id="패스_33" data-name="패스 33" d="M336.99,387.524l-14.119,14.119,14.119,14.119"
+					transform="translate(-320.871 -384.695)" fill="none" stroke="#000" stroke-linecap="round"
+					stroke-linejoin="round" stroke-width="4" opacity="0.29" />
+			</svg>
+			<div class="percent-box">
+				<div class="book">
+					<!-- 아이콘 최대 크기임. -->
+					<img src="image/book_icon.svg">
+					<div class="bookinfo-container">
+						<h3 class="bookname">시선으로부터</h3>
+						<p class="bookwriter">정세랑</p>
+						<div class="page-percent">
+							<p><input type="text" id="user-page" placeholder="000"></input>/<span id="whole-page">350</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="book">
+					<img src="image/book_icon.svg">
+					<div class="bookinfo-container">
+						<h3 class="bookname">시선으로부터</h3>
+						<p class="bookwriter">정세랑</p>
+						<div class="page-percent">
+							<p><input type="text" id="user-page" placeholder="000">/<span id="whole-page">350</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="book">
+					<img src="image/book_icon.svg">
+					<div class="bookinfo-container">
+						<h3 class="bookname">시선으로부터</h3>
+						<p class="bookwriter">정세랑</p>
+						<div class="page-percent">
+							<p><input type="text" id="user-page" placeholder="000">/<span id="whole-page">350</span></p>
+						</div>
+					</div>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="18.948" height="33.895" viewBox="0 0 18.948 33.895">
+					<path id="패스_34" data-name="패스 34" d="M322.871,387.524l14.12,14.119-14.12,14.119"
+						transform="translate(-320.043 -384.695)" fill="none" stroke="#000" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="4" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<!-- 도서목록 -->
+	<div id="book_list">
+		<div class="scroll"></div>
+		<div class="title">
+			<h1>도서 목록</h1>
+			<div class="line"></div>
+		</div>
+		<table>
+			<thead>
+				<tr class="head_tr">
+					<td width="97">NO</td>
+					<td width="809" style="text-align: left;">책 제목</td>
+					<td width="274">날짜</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr class="body_tr">
+					<td width="97">003</td>
+					<td width="809" style="text-align: left;">확인용</td>
+					<td width="274">2021.04.12</td>
+				</tr>
+				<tr class="body_tr">
+					<td width="97">002</td>
+					<td width="809" style="text-align: left;">확인용</td>
+					<td width="274">2021.04.12</td>
+				</tr>
+				<tr class="body_tr">
+					<td width="97">001</td>
+					<td width="809" style="text-align: left;">확인용</td>
+					<td width="274">2021.04.12</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="#no_ptplo">팝업</a>
+		<div class="no_ptplo_popup" id="no_ptplo">
+			<div class="cancel-container"><a href="#book_list" class="cancel">
+				<img src="image/cancel.svg">
+			</a>
+			<div class="no_ptople_text">아직 작성된 독서포트폴리오가 없습니다. <br>새로운 독서포트폴리오를 작성히겠습니까?</div>
+			</div>
+			<button class="ptplo_btn ptplo_yes">네, 쓸래요!</button>
+			<button class="ptplo_btn ptplo_no">아니요, 안 쓸래요</button>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="link-container">
+				<ul>
+					<li><a href="#">개인정보보호방침</a></li>
+					<li><a href="#">학교정보공개</a></li>
+					<li><a href="#">배너모임</a></li>
+					<li><a href="#">기존홈페이지</a></li>
+				</ul>
+			</div>
+			<div class="address-container">(08821) 서울특별시 관악구 호암로 546 (신림동)</div>
+			<div class="tel-container">
+				<ul>
+					<li><strong>교무실&nbsp;</strong>02-872-4071(Fax 02-887-0856)</li>
+					<li><strong>개발채용&nbsp;</strong>070-5099-8313</li>
+					<li><strong>디자인채용&nbsp;</strong>070-5099-8315</li>
+					<li><strong>취업지원부&nbsp;</strong>02-888-8350 (Fax 02-875-2092)</li>
+					<li><strong>행정실&nbsp;</strong>02-886-1812</li>
+				</ul>
+			</div>
+			<div class="line"></div>
+			<div class="info-container">
+				<ul>
+					<li>546 Hoam-ro, Gwanak-gu, Seoul, 08821 Korea</li>
+					<li>MIRIM MEISTER SCHOOL</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="js/timer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
