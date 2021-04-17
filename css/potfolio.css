@@ -1,0 +1,287 @@
+@font-face {
+	font-family: 'NotoSansCJKkr-regular';
+	src: url('fonts/NotoSansCJKkr-regular.otf') format('opentype'); 
+}
+html {
+	font-family: 'NotoSansCJKkr-regular';
+}
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+}
+body {
+	background: #F8F8F8;
+}
+/* header */
+header {
+    width: 100%;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #F8F8F8;
+}
+header nav {
+    background: none;
+    width: 1180px;
+    display: flex;
+    height: 32px;
+    padding: 18px 0px;
+    margin: auto;
+	color: #000;
+}
+header nav li a {
+	color: black;
+}
+header .logo_br {
+    width: 128px;
+    height: 28px;
+    padding-top: 5px;
+}
+
+header nav li:first-child {
+    padding-left: 102px;
+}
+
+header nav li {
+    float: left;
+    text-align: center;
+    padding-top: 5px;
+}
+
+header nav li:not(:last-child) {
+    padding-right: 57px;
+}
+
+
+header nav a:hover {
+    color: #78aa78;
+}
+header .search_data {
+    height: 20px;
+    width: 183px;
+    display: flex;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin-left: 120px;
+    padding-top: 5px;
+}
+
+header .search_data input {
+    height: 100%;
+    width: 183px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    font-weight: 300px;
+    color: #000;
+}
+header input::placeholder {
+    color: #000;
+    opacity: 0.5;
+}
+
+header .search_data a {
+    width: 18px;
+    height: 18px;
+}
+
+header .user {
+    width: 46px;
+    height: 46px;
+    padding-left: 31px;
+    margin-top: -12px;
+    padding-top: 5px;
+}
+/* potfolio */
+#potfolio {
+	margin: 0 auto;
+	margin-top: 100px;
+	width: 1180px;
+	margin-bottom: 300px;
+}
+.head-title {
+	text-align: center;
+	margin: 0 auto;
+}
+#potfolio input {
+	border: 1px solid #F8F8F8;
+	font-size: 22px;
+	margin-top: 15px;
+	background: #F8F8F8;
+}
+input:focus {
+	outline: none;
+}
+.line {
+	width: 118px;
+	height: 7px;
+	background: #386138;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.description {
+	font-size: 16px;
+	margin-bottom: 50px;
+	margin-top: 5px;
+}
+title .h1 {
+	size: 36px;
+}
+.container {
+	border: 1px solid #707070;
+	border-radius: 22px;
+	height: 60px;
+	margin-bottom: 20px;
+}
+.info {
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#potfolio .title {
+	width: 1178px;
+}
+#title {
+	width: 800px;
+}
+.writer {
+	width: 564px;
+	float: left;
+}
+#writer {
+	width: 400px;
+}
+.publisher {
+	width: 290px;
+	float: left;
+	margin-left: 25px;
+}
+#publisher {
+	width: 180px;
+}
+.date {
+	float: right;
+	width: 270px;
+}
+#date {
+	width: 150px;
+}
+label {
+	color: black;
+	font-size: 22px;
+	margin-left: 10px;
+	margin-top: -20px;
+}
+.main-container {
+	clear: both;
+	margin-top: 50px;
+	min-height: 759px;
+	height: auto;
+	overflow: auto;
+	box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.2);
+	padding-left: 48px;
+	padding-top: 70px;
+	border-radius: 72px;
+}
+textarea {
+	width: 1084px;
+	height: 612px;
+	font-size: 24px;
+	font-family: 'NotoSansCJKkr-regular';
+	border: none;
+	overflow-y: hidden;
+	resize: none;
+	background: #F8F8F8;
+	margin-bottom: 70px;
+}
+textarea:focus {
+	outline: none;
+}
+.end {
+	text-align: right;
+	margin-top: 50px;
+}
+#save, #alter {
+	background: #F5F5F5;
+	width: 112px;
+	height: 60px;
+	border-radius: 34px;
+	margin-top: 50px;
+	color: black;
+	box-shadow: 0px 3px 3px #707070;
+	font-size: 19px;
+	margin-left: 30px;
+	border: none;
+}
+#save:hover, #alter:hover {
+	background: #386138;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+footer {
+	height: 420px;
+	background: #DFDFDF;
+	font-weight: 400;
+}
+.footer-container {
+	font-family: 'NotoSansCJKkr-regular';
+	width: 1180px;
+	margin: 0 auto;
+}
+footer ul li {
+	list-style-type: none;
+}
+footer a {
+	text-decoration: none;
+	color: black;
+}
+footer .link-container ul li {
+	float: left;
+	margin-right: 20px;
+	font-weight: bold;
+	font-size: 22px;
+	margin-top: 60px;
+}
+footer .link-container {
+	overflow: auto;
+}
+footer .address-container {
+	padding-top: 30px;
+	clear: both;
+	text-align: left;
+	font-size: 22px;
+}
+footer .tel-container {
+	padding-bottom: 30px;
+}
+footer .tel-container ul {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+footer .tel-container ul li {
+	float: left;
+	margin-right: 30px;
+	font-size: 22px;
+}
+footer .tel-container ul li strong {
+	font-weight: bold;
+}
+footer .line {
+	width: 100%;
+	height: 1px;
+	background: #BBBBBB;
+	margin-bottom: 30px;
+}
+footer .info-container ul li {
+	font-size: 22px;
+	margin-right: 40px;
+	float: left;
+	font-weight: bold;
+}
