@@ -6,6 +6,7 @@
     margin: 0 auto;
     padding: 0;
     color: #000;
+    border: 1px solid red;
 }
 
 body {
@@ -527,11 +528,12 @@ percent-box svg {
 .percent-box {
 	margin: 0;
 	height: 500px;
-	width: 1180px;
+	width: fit-content;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	padding-top: 50px;
+    block-size: fit-content;
 }
 .book {
 	text-align: center;
