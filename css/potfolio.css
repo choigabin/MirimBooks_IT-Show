@@ -1,11 +1,5 @@
-@font-face {
-	font-family: 'NotoSansCJKkr-regular';
-	src: url('fonts/NotoSansCJKkr-regular.otf') format('opentype'); 
-}
-html {
-	font-family: 'NotoSansCJKkr-regular';
-}
 * {
+	font-family: 'Noto Sans KR', sans-serif;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -22,7 +16,7 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    background: #F8F8F8;
+    background: #386138;
 }
 header nav {
     background: none;
@@ -32,9 +26,6 @@ header nav {
     padding: 18px 0px;
     margin: auto;
 	color: #000;
-}
-header nav li a {
-	color: black;
 }
 header .logo_br {
     width: 128px;
@@ -55,7 +46,10 @@ header nav li {
 header nav li:not(:last-child) {
     padding-right: 57px;
 }
-
+header nav a {
+	color: white;
+	font-weight: 400;
+}
 
 header nav a:hover {
     color: #78aa78;
@@ -65,7 +59,7 @@ header .search_data {
     width: 183px;
     display: flex;
     text-align: center;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid white;
     margin-left: 120px;
     padding-top: 5px;
 }
@@ -78,10 +72,10 @@ header .search_data input {
     outline: none;
     font-size: 10px;
     font-weight: 300px;
-    color: #000;
+    color: white;
 }
 header input::placeholder {
-    color: #000;
+    color: white;
     opacity: 0.5;
 }
 
