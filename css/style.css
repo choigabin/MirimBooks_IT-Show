@@ -121,6 +121,9 @@ input::placeholder {
     margin-top: -12px;
     padding-top: 5px;
 }
+#plus_icon:hover, #plus_icon:active{
+    fill:#386138;
+}
 .plus {
     width: 46px;
     height: 46px;
@@ -128,6 +131,7 @@ input::placeholder {
     margin-top: -12px;
     padding-top: 5px;
 }
+
 .book-plus {
     width: 440px;
     height: 591px;
