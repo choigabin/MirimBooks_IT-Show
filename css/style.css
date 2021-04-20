@@ -312,23 +312,23 @@ input::placeholder {
     display: none;
 }
 .banner .left {
-    left: 200px;
+    left: 100px;
     background: url("../image/left.svg") center center / 100% no-repeat;
     background-size: 14px 28px;
 
 }
 .banner .left:hover {
-    left: 200px;
+    left: 100px;
     background: url("../image/left_click.svg") center center / 100% no-repeat;
     background-size: 14px 28px;
 }
 .banner .right {
-    right: 200px;
+    right: 100px;
     background: url("../image/right.svg") center center / 100% no-repeat;
     background-size: 14px 28px;
 }
 .banner .right:hover {
-    right: 200px;
+    right: 100px;
     background: url("../image/right_click.svg") center center / 100% no-repeat;
     background-size: 14px 28px;
 }
