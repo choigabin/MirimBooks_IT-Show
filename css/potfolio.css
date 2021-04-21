@@ -1,10 +1,10 @@
 * {
-	font-family: 'Noto Sans KR', sans-serif;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	list-style: none;
     text-decoration: none;
     border-collapse: collapse;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 body {
 	background: #F8F8F8;
@@ -12,11 +12,12 @@ body {
 /* header */
 header {
     width: 100%;
+	background: #386138;
     font-size: 16px;
     top: 0;
     left: 0;
     z-index: 10;
-    background: #386138;
+   
 }
 header nav {
     background: none;
@@ -25,9 +26,8 @@ header nav {
     height: 32px;
     padding: 18px 0px;
     margin: auto;
-	color: #000;
 }
-header .logo_br {
+header .logo_wh {
     width: 128px;
     height: 28px;
     padding-top: 5px;
@@ -44,11 +44,11 @@ header nav li {
 }
 
 header nav li:not(:last-child) {
-    padding-right: 57px;
+    padding-right: 40px;
 }
+
 header nav a {
-	color: white;
-	font-weight: 400;
+    color: #fff;
 }
 
 header nav a:hover {
@@ -59,7 +59,7 @@ header .search_data {
     width: 183px;
     display: flex;
     text-align: center;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #fff;
     margin-left: 120px;
     padding-top: 5px;
 }
@@ -72,16 +72,17 @@ header .search_data input {
     outline: none;
     font-size: 10px;
     font-weight: 300px;
-    color: white;
+    color: #fff;
 }
 header input::placeholder {
-    color: white;
+    color: #fff;
     opacity: 0.5;
 }
 
 header .search_data a {
     width: 18px;
     height: 18px;
+	line-height: 2px;
 }
 
 header .user {
@@ -91,6 +92,143 @@ header .user {
     margin-top: -12px;
     padding-top: 5px;
 }
+.plus {
+    width: 46px;
+    height: 46px;
+    padding-left: 31px;
+    margin-top: -12px;
+    padding-top: 5px;
+}
+.book-plus {
+    width: 440px;
+    height: 591px;
+    border-radius: 34px;
+    background: white;
+    position: fixed;
+    top: 80px;
+    right: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#plus_icon:hover{
+    fill: #386138;
+}
+.book-plus:target {
+    visibility: visible;
+}
+.plus-input-container {
+    margin: 0px 18px 18px 18px;
+}
+.book-plus .plus-ment {
+    font-size: 22px;
+    width: 100%;
+    margin-bottom: 70px;
+}
+.book-plus input {
+    width: 365px;
+    font-size: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #707070;
+    color: black;
+    margin-bottom: 40px;
+}
+.book-plus input::placeholder {
+    font-size: 16px;
+    opacity: 0.5;
+    color: black;
+}
+.book-plus .plus-button {
+    display: block;
+    align-self: flex-end;
+    width: 100%;
+    height: 49px;
+    color: #fff;
+    background: #386138;
+    border-radius: 27px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+.book-plus input:focus {
+    outline: none;
+}
+.login-popup {
+    width: 434px;
+    height: 429px;
+    border-radius: 34px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 80px;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.login-popup:target {
+    visibility: visible;
+}
+.login-user {
+    width: 116px;
+    height: 116px;
+}
+.login-number {
+    width: 357px;
+    height: 57px;
+    border-radius: 27px;
+    border: 1px solid #707070;
+    background: #FFFFFF;
+    text-indent: 20px;
+    margin-top: 40px;
+}
+.login-number:focus {
+    outline: none;
+}
+.login-number::placeholder {
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.24;
+    font-weight: lighter;
+}
+.login-button {
+    display: block;
+    align-self: flex-end;
+    width: 357px;
+    height: 70px;
+    background: #FFFFFF;
+    border-radius: 27px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 70px;
+    border: none;
+    font-size: 22px;
+}
+.login-button:hover {
+    border: 3px solid #386138;
+    cursor: pointer;
+    box-shadow: none;
+}
+.login-button:focus {
+    outline: none;
+}
+.cancel-container {
+    width: 100%;
+}
+.cancel {
+    float: right;
+}
+
 /* potfolio */
 #potfolio {
 	margin: 0 auto;
@@ -107,6 +245,7 @@ header .user {
 	font-size: 22px;
 	margin-top: 15px;
 	background: #F8F8F8;
+    margin-left: 10px;
 }
 input:focus {
 	outline: none;
@@ -141,7 +280,7 @@ title .h1 {
 	width: 1178px;
 }
 #title {
-	width: 800px;
+	width: 1000px;
 }
 .writer {
 	width: 564px;
@@ -169,7 +308,7 @@ label {
 	color: black;
 	font-size: 22px;
 	margin-left: 10px;
-	margin-top: -20px;
+    font-weight: 500;
 }
 .main-container {
 	clear: both;
@@ -262,6 +401,7 @@ footer .tel-container ul {
 footer .tel-container ul li {
 	float: left;
 	margin-right: 30px;
+	margin-left: 0px;
 	font-size: 22px;
 }
 footer .tel-container ul li strong {

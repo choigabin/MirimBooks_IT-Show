@@ -412,7 +412,6 @@ input::placeholder {
     outline: none;
    
 }
-
 .btn, botton:focus{
     border: none;
     background-color: transparent;
@@ -428,6 +427,7 @@ input::placeholder {
     margin-right: 58px;
     margin-top: 32px;
 }
+
 /* indext */
 .index-container {
     margin-bottom: 130px;
