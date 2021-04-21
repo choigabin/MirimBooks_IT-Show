@@ -48,7 +48,7 @@ function start() {
     start_line_2.style.stroke = "#fff";
 }
 
-let stop_icon = document.getElementById('start_off');
+let stop_icon = document.getElementById('stop_off');
 let stop_circle = document.getElementById('stop_circle');
 let stop_square = document.getElementById('stop_square');
 let stop_circle_in = document.getElementById('stop_circle_in');
