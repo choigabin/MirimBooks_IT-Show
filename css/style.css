@@ -245,9 +245,10 @@ input::placeholder {
     font-size: 22px;
 }
 .login-button:hover {
-    border: 3px solid #386138;
     cursor: pointer;
     box-shadow: none;
+    background: #386138;
+
 }
 .login-button:focus {
     outline: none;
