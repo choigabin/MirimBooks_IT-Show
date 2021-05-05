@@ -1,0 +1,46 @@
+<svg id="구성_요소_4_1" data-name="구성 요소 4 – 1" xmlns="http://www.w3.org/2000/svg" width="98" height="97" viewBox="0 0 98 97">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #386138;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+        stroke-width: 8px;
+      }
+
+      .cls-3 {
+        fill: #707070;
+      }
+
+      .cls-4, .cls-6 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        fill: #386138;
+      }
+    </style>
+  </defs>
+  <g id="타원_22" data-name="타원 22" class="cls-1">
+    <ellipse class="cls-4" cx="49" cy="48.5" rx="49" ry="48.5"/>
+    <ellipse class="cls-5" cx="49" cy="48.5" rx="47" ry="46.5"/>
+  </g>
+  <g id="그룹_7" data-name="그룹 7" transform="translate(35.514 16.889) rotate(14)">
+    <path id="패스_14" data-name="패스 14" class="cls-2" d="M39.05,0A19.525,19.525,0,0,1,19.525,19.525,19.525,19.525,0,0,1,0,0" transform="translate(0 27.672)"/>
+    <path id="패스_15" data-name="패스 15" class="cls-2" d="M19.518,0A19.523,19.523,0,0,0,2.535,10.05,19.835,19.835,0,0,0,0,19.83" transform="translate(0.007 8.147)"/>
+    <g id="다각형_1" data-name="다각형 1" class="cls-3" transform="translate(32.749) rotate(87)">
+      <path class="cls-4" d="M 8.750229835510254 9.857437133789063 L 6.839385986328125 9.857437133789063 L 7.794807434082031 8.158906936645508 L 8.750229835510254 9.857437133789063 Z"/>
+      <path class="cls-6" d="M 7.79480504989624 -5.7220458984375e-06 L 15.5896053314209 13.8574275970459 L 4.76837158203125e-06 13.8574275970459 L 7.79480504989624 -5.7220458984375e-06 Z"/>
+    </g>
+  </g>
+</svg>
