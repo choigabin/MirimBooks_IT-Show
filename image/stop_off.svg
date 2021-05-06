@@ -1,0 +1,32 @@
+<svg id="구성_요소_2_1" data-name="구성 요소 2 – 1" xmlns="http://www.w3.org/2000/svg" width="98" height="97" viewBox="0 0 98 97">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #386138;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-width: 6px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="타원_31" data-name="타원 31" class="cls-1">
+    <ellipse class="cls-3" cx="49" cy="48.5" rx="49" ry="48.5"/>
+    <ellipse class="cls-4" cx="49" cy="48.5" rx="47" ry="46.5"/>
+  </g>
+  <line id="선_51" data-name="선 51" class="cls-2" y2="37" transform="translate(39 30)"/>
+  <line id="선_52" data-name="선 52" class="cls-2" y2="37" transform="translate(59 30)"/>
+</svg>

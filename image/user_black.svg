@@ -1,0 +1,11 @@
+<svg id="구성_요소_6_1" data-name="구성 요소 6 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Icon_material-person" data-name="Icon material-person" d="M23.576,23.576a8.788,8.788,0,1,0-8.788-8.788A8.785,8.785,0,0,0,23.576,23.576Zm0,4.394C17.71,27.97,6,30.914,6,36.758v4.394H41.152V36.758C41.152,30.914,29.442,27.97,23.576,27.97Z" transform="translate(-6 -6)"/>
+    </clipPath>
+  </defs>
+  <circle id="타원_14" data-name="타원 14" cx="23" cy="23" r="23" fill="#dcdcdc"/>
+  <g id="마스크_그룹_1" data-name="마스크 그룹 1" transform="translate(5.354 9.824)" clip-path="url(#clip-path)">
+    <ellipse id="타원_7" data-name="타원 7" cx="24" cy="24.5" rx="24" ry="24.5" transform="translate(-6.353 -12.824)"/>
+  </g>
+</svg>
