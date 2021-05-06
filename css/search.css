@@ -32,7 +32,7 @@ header .logo_wh {
 }
 
 header nav li:first-child {
-    padding-left: 102px;
+    padding-left: 120px;
 }
 
 header nav li {
@@ -42,7 +42,7 @@ header nav li {
 }
 
 header nav li:not(:last-child) {
-    padding-right: 40px;
+    padding-right: 37px;
 }
 
 header nav a {
@@ -59,16 +59,15 @@ header .search_data {
     text-align: center;
     border-bottom: 2px solid #fff;
     margin-left: 120px;
-    padding-top: 5px;
+    padding-top: 6px;
 }
 
 header .search_data input {
     height: 100%;
-    width: 183px;
+    width: 165px;
     background: none;
     border: none;
     outline: none;
-    font-size: 10px;
     font-weight: 300px;
     color: #fff;
 }
