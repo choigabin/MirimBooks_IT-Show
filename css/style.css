@@ -644,14 +644,17 @@ tbody {
     margin-top: 65px;
     border: none;
     background-color: #fff;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+    font-size: medium;
 }
 .ptplo_no{
     margin: auto 15px;
 }
 .ptplo_no:hover, 
 .ptplo_yes:hover{
-    border: 2px solid #386138;
+    background: #386138;
+    color: white;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.16);
     cursor: pointer;
 }
 /* footer */

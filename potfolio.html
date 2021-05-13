@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/potfolio.css">
@@ -7,14 +8,15 @@
 	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	<title>MIBOOKS</title>
 	<script type="text/javascript">
-	function cmaTextareaSize(obj, bsize) {
-		let sTextarea = document.getElementById(obj);
-		let csize = (sTextarea.scrollHeight >= bsize) ? sTextarea.scrollHeight+"px" : bsize+"px";
-		sTextarea.style.height=bsize+"px";
-		sTextarea.style.height = csize;
-	}
+		function cmaTextareaSize(obj, bsize) {
+			let sTextarea = document.getElementById(obj);
+			let csize = (sTextarea.scrollHeight >= bsize) ? sTextarea.scrollHeight + "px" : bsize + "px";
+			sTextarea.style.height = bsize + "px";
+			sTextarea.style.height = csize;
+		}
 	</script>
 </head>
+
 <body>
 	<header>
 		<nav>
@@ -27,37 +29,50 @@
 				<li><a href="potfolio.html">독서포트폴리오</a></li>
 			</ul>
 			<div class="search_data">
+				<!-- 메뉴바 도서 검색 INPUT -->
 				<input type="search" placeholder="관심 도서를 검색해주세요.">
 				<a href="search.html"><img src="image/search.svg"></a>
 			</div>
-			<a href="#plus"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" class="plus">
-				<g id="그룹_15" data-name="그룹 15" transform="translate(-1560 -15)">
-				  <circle id="타원_31" data-name="타원 31" cx="23" cy="23" r="23" transform="translate(1560 15)" fill="#dcdcdc"/>
-				  <path id="plus_icon" d="M31.214,13.766H19.794V2.294A2.29,2.29,0,0,0,17.51,0H15.988A2.29,2.29,0,0,0,13.7,2.294V13.766H2.284A2.29,2.29,0,0,0,0,16.061V17.59a2.29,2.29,0,0,0,2.284,2.294H13.7V31.356a2.29,2.29,0,0,0,2.284,2.294H17.51a2.29,2.29,0,0,0,2.284-2.294V19.884h11.42A2.29,2.29,0,0,0,33.5,17.59V16.061A2.29,2.29,0,0,0,31.214,13.766Zm0,0" transform="translate(1566.251 21.175)" fill="#fff"/>
-				</g>
-			  </svg></a>
+			<a href="#plus"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+					class="plus">
+					<g id="그룹_15" data-name="그룹 15" transform="translate(-1560 -15)">
+						<circle id="타원_31" data-name="타원 31" cx="23" cy="23" r="23" transform="translate(1560 15)"
+							fill="#dcdcdc" />
+						<path id="plus_icon"
+							d="M31.214,13.766H19.794V2.294A2.29,2.29,0,0,0,17.51,0H15.988A2.29,2.29,0,0,0,13.7,2.294V13.766H2.284A2.29,2.29,0,0,0,0,16.061V17.59a2.29,2.29,0,0,0,2.284,2.294H13.7V31.356a2.29,2.29,0,0,0,2.284,2.294H17.51a2.29,2.29,0,0,0,2.284-2.294V19.884h11.42A2.29,2.29,0,0,0,33.5,17.59V16.061A2.29,2.29,0,0,0,31.214,13.766Zm0,0"
+							transform="translate(1566.251 21.175)" fill="#fff" />
+					</g>
+				</svg></a>
 			<div id="plus" class="book-plus">
 				<div class="cancel-container"><a href="#" class="cancel">
-					<img src="image/cancel.svg">
-				</a>
+						<img src="image/cancel.svg">
+					</a>
 				</div>
 				<div class="plus-input-container">
-					<p class="plus-ment">도서 등록을 위해<br>아래 정보를  입력해주세요.</p>
+					<p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
+					<!-- <책 제목> 도서 등록 INPUT -->
 					<input type="text" id="plus-title" placeholder="책 제목">
+					<!-- <저자> 도서 등록 INPUT -->
 					<input type="text" id="plus-writer" placeholder="저자">
+					<!-- <출판사> 도서 등록 INPUT -->
 					<input type="text" id="plus-publiser" placeholder="출판사">
+					<!-- <페이지 수> 도서 등록 INPUT -->
 					<input type="text" id="plus-whole" placeholder="전체 페이지 수">
+					<!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
 					<input type="submit" id="plus-submit" class="plus-button" value="확인">
 				</div>
 			</div>
-			<a href="#popup"><img src="image/user.svg" class="user"/></a>
+			<a href="#popup"><img src="image/user.svg" class="user" /></a>
+			<!-- 로그인 팝업 -->
 			<div class="login-popup" id="popup">
 				<div class="cancel-container"><a href="#" class="cancel">
-					<img src="image/cancel.svg">
-				</a>
+						<img src="image/cancel.svg">
+					</a>
 				</div>
-				<img src="image/user.svg">								
+				<img src="image/user.svg">
+				<!-- LOGIN 학번 이름 INPUT -->
 				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
+				<!-- LOGIN BUTTON -->
 				<button class="login-button">
 					<img src="image/login_btn.svg">
 				</button>
@@ -68,32 +83,43 @@
 		<div class="head-title">
 			<h1>독서 포트폴리오</h1>
 			<div class="line"></div>
-			<p class="description">책에서만 쓴 독서 포트폴리오를<br/>
-			미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
+			<p class="description">책에서만 쓴 독서 포트폴리오를<br />
+				미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
 		</div>
 		<div class="info">
 			<div class="title container">
 				<label for="title">책 제목</label>
+				<!-- 책 제목 INPUT-->
 				<input type="text" name="title" id="title" />
 			</div>
 			<div class="writer container">
 				<label for="writer">저자</label>
+				<!-- 저자 INPUT -->
 				<input type="text" name="writer" id="writer" />
 			</div>
 			<div class="publisher container">
 				<label for="publisher">출판사</label>
+				<!-- 출판사 INPUT -->
 				<input type="text" name="publisher" id="publisher" />
 			</div>
 			<div class="date container">
 				<label for="date">읽은 날짜</label>
+				<!-- 읽은 날짜 INPUT -->
 				<input type="text" name="date" id="date" />
 			</div>
 		</div>
 		<div class="main-container">
-			<textarea name="main" placeholder="내용" id="main" class="textarea_size" onchange="cmaTextareaSize('main', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea><script>cmaTextareaSize('main', 612);</script>
+			<!-- 독서 내용 입력 -->
+			<textarea name="main" placeholder="내용" id="main" class="textarea_size"
+				onchange="cmaTextareaSize('main', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea>
+			<script>
+				cmaTextareaSize('main', 612);
+			</script>
 		</div>
 		<div class="end">
+			<!-- 수정 BUTTON -->
 			<input type="button" value="수정" id="alter">
+			<!-- 저장 BUTTON -->
 			<input type="submit" value="저장" id="save">
 		</div>
 	</div>
@@ -127,4 +153,5 @@
 		</div>
 	</footer>
 </body>
+
 </html>
