@@ -79,50 +79,52 @@
 			</div>
 		</nav>
 	</header>
-	<div id="potfolio">
-		<div class="head-title">
-			<h1>독서 포트폴리오</h1>
-			<div class="line"></div>
-			<p class="description">책에서만 쓴 독서 포트폴리오를<br />
-				미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
-		</div>
-		<div class="info">
-			<div class="title container">
-				<label for="title">책 제목</label>
-				<!-- 책 제목 INPUT-->
-				<input type="text" name="title" id="title" />
+	<form role="form" method="post" action="portfolio_insert.php">
+		<div id="potfolio">
+			<div class="head-title">
+				<h1>독서 포트폴리오</h1>
+				<div class="line"></div>
+				<p class="description">책에서만 쓴 독서 포트폴리오를<br />
+					미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
 			</div>
-			<div class="writer container">
-				<label for="writer">저자</label>
-				<!-- 저자 INPUT -->
-				<input type="text" name="writer" id="writer" />
+			<div class="info">
+				<div class="title container">
+					<label for="title">책 제목</label>
+					<!-- 책 제목 INPUT-->
+					<input type="text" name="title" id="title" />
+				</div>
+				<div class="writer container">
+					<label for="writer">저자</label>
+					<!-- 저자 INPUT -->
+					<input type="text" name="writer" id="writer" />
+				</div>
+				<div class="publisher container">
+					<label for="publisher">출판사</label>
+					<!-- 출판사 INPUT -->
+					<input type="text" name="publisher" id="publisher" />
+				</div>
+				<div class="date container">
+					<label for="date">읽은 날짜</label>
+					<!-- 읽은 날짜 INPUT -->
+					<input type="text" name="date" id="date" />
+				</div>
 			</div>
-			<div class="publisher container">
-				<label for="publisher">출판사</label>
-				<!-- 출판사 INPUT -->
-				<input type="text" name="publisher" id="publisher" />
+			<div class="main-container">
+				<!-- 독서 내용 입력 -->
+				<textarea name="content" placeholder="내용" id="content" class="textarea_size" 
+					onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea>
+				<script>
+					cmaTextareaSize('content', 612);
+				</script>
 			</div>
-			<div class="date container">
-				<label for="date">읽은 날짜</label>
-				<!-- 읽은 날짜 INPUT -->
-				<input type="text" name="date" id="date" />
+			<div class="end">
+				<!-- 수정 BUTTON -->
+				<input type="button" value="수정" id="alter">
+				<!-- 저장 BUTTON -->
+				<input type="submit" value="저장" id="save">
 			</div>
 		</div>
-		<div class="main-container">
-			<!-- 독서 내용 입력 -->
-			<textarea name="content" placeholder="내용" id="content" class="textarea_size" 
-				onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea>
-			<script>
-				cmaTextareaSize('content', 612);
-			</script>
-		</div>
-		<div class="end">
-			<!-- 수정 BUTTON -->
-			<input type="button" value="수정" id="alter">
-			<!-- 저장 BUTTON -->
-			<input type="submit" value="저장" id="save">
-		</div>
-	</div>
+	</form>
 	<footer>
 		<div class="footer-container">
 			<div class="link-container">

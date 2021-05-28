@@ -1,5 +1,6 @@
 <?php
-$conn = mysql('localhost', 'root', '100412', 'mibooks');
+//데이터 베이스 연결 
+$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
 
 $_title = $_POST['title'];
 $_writer = $_POST['writer'];
