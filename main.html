@@ -42,20 +42,23 @@
 						<img src="image/cancel.svg">
 					</a>
 				</div>
+				<form role="form" method="post" action="book_insert.php"></form>
 				<div class="plus-input-container">
 					<p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
 					<!-- <책 제목> 도서 등록 INPUT -->
-					<input type="text" id="plus-title" placeholder="책 제목">
+					<input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
 					<!-- <저자> 도서 등록 INPUT -->
-					<input type="text" id="plus-writer" placeholder="저자">
+					<input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
 					<!-- <출판사> 도서 등록 INPUT -->
-					<input type="text" id="plus-publiser" placeholder="출판사">
+					<input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
 					<!-- <페이지 수> 도서 등록 INPUT -->
-					<input type="text" id="plus-whole" placeholder="전체 페이지 수">
+					<input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
 					<!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
 					<input type="submit" id="plus-submit" class="plus-button" value="확인">
 				</div>
+				</form>
 			</div>
+				
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
 			<div class="login-popup" id="popup">
