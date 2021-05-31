@@ -42,23 +42,22 @@
 						<img src="image/cancel.svg">
 					</a>
 				</div>
-				<form role="form" method="post" action="book_insert.php"></form>
-				<div class="plus-input-container">
-					<p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
-					<!-- <책 제목> 도서 등록 INPUT -->
-					<input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
-					<!-- <저자> 도서 등록 INPUT -->
-					<input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
-					<!-- <출판사> 도서 등록 INPUT -->
-					<input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
-					<!-- <페이지 수> 도서 등록 INPUT -->
-					<input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
-					<!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
-					<input type="submit" id="plus-submit" class="plus-button" value="확인">
-				</div>
+				<form role="form" method="post" action="book_insert.php">
+                    <div class="plus-input-container">
+                        <p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
+                        <!-- <책 제목> 도서 등록 INPUT -->
+                        <input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
+                        <!-- <저자> 도서 등록 INPUT -->
+                        <input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
+                        <!-- <출판사> 도서 등록 INPUT -->
+                        <input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
+                        <!-- <페이지 수> 도서 등록 INPUT -->
+                        <input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
+                        <!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
+                        <input type="submit" id="plus-submit" class="plus-button" value="확인">
+                    </div>
 				</form>
 			</div>
-				
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
 			<div class="login-popup" id="popup">
@@ -244,14 +243,16 @@
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
+        <form role="form" method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." name="input_text" id="input_text"></textarea>
 				<!-- 인덱스 출력 란 -->
 				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
 				<!-- 인덱스 <저장> 버튼 -->
 				<input class="save-btn" type="submit" name="save" value="저장" id="save">
 			</div>
+        </form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
@@ -346,29 +347,32 @@
 				<tr class="head_tr">
 					<td width="97">NO</td>
 					<td width="809" style="text-align: left;">책 제목</td>
-					<td width="274">날짜</td>
+					<td width="274">저자</td>
 				</tr>
 			</thead>
 			<tbody>
+                <?php
+                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+
+                $sql = "select id, plus_title, plus_writer from add_book order by id asc";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+
+                for($i = 0 ; $i < $num ; $i++) {
+                    $re = mysqli_fetch_array($result);
+                ?>
 
 				<tr class="body_tr">
 					<!-- 도서목록 <책 번호> -->
-					<td width="97">003</td>
+					<td width="97"><?php echo $re[0] ?></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;">확인용</td>
+					<td width="809" style="text-align: left;"><?php echo $re[1] ?></td>
 					<!-- 도서목록 <읽은 날짜> -->
-					<td width="274">2021.04.12</td>
+					<td width="274"><?php echo $re[2] ?></td>
 				</tr>
-				<tr class="body_tr">
-					<td width="97">002</td>
-					<td width="809" style="text-align: left;">확인용</td>
-					<td width="274">2021.04.12</td>
-				</tr>
-				<tr class="body_tr">
-					<td width="97">001</td>
-					<td width="809" style="text-align: left;">확인용</td>
-					<td width="274">2021.04.12</td>
-				</tr>
+                <?php
+                }
+                ?>
 			</tbody>
 		</table>
 		<a href="#no_ptplo">팝업</a>
@@ -384,7 +388,6 @@
 			<button class="ptplo_btn ptplo_no">아니요, 안 쓸래요</button>
 		</div>
 	</div>
-	<!-- FOOTER -->
 	<footer>
 		<div class="container">
 			<div class="link-container">

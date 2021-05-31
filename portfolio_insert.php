@@ -16,5 +16,5 @@ mysqli_query($conn, $sql);
 
 <script>
     alert("포트폴리오 작성이 완료되었습니다.")
-    location.href="main.html";
+    location.href="main.php";
 </script>
