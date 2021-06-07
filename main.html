@@ -70,27 +70,10 @@
 				<!-- LOGIN 학번 이름 INPUT -->
 				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
 				<!-- LOGIN BUTTON -->
-				<div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark">
-					<button class="login-button">
+					<button class="login-button" onclick="onSignIn();">
 						<img class="login_image" src="image/google.svg" onmouseover="this.src='image/google_hover.svg'"
 						onmouseout="this.src='image/google.svg'">
-						<script>
-							function onSignIn(googleUser) {
-								// Useful data for your client-side scripts:
-								var profile = googleUser.getBasicProfile();
-								console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-								console.log('Full Name: ' + profile.getName());
-								console.log('Given Name: ' + profile.getGivenName());
-								console.log('Family Name: ' + profile.getFamilyName());
-								console.log("Image URL: " + profile.getImageUrl());
-								console.log("Email: " + profile.getEmail());
-								// The ID token you need to pass to your backend:
-								var id_token = googleUser.getAuthResponse().id_token;
-								console.log("ID Token: " + id_token);
-							}
-						</script>
 					</button>
-				</div>
 			</div>
 		</nav>
 	</header>
