@@ -271,7 +271,7 @@ input::placeholder {
     z-index: 1;
 }
 
-.banner .slidelist {
+.banner .slidelist { 
     white-space: nowrap;
     font-size: 0;
     overflow: hidden;
