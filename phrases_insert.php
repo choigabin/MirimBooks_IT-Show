@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
 
-$_content = $_POST['input_text'];
+$_content = $_POST['input-text'];
 
 $sql = "insert into phrases(content)
 values( '$_content')";

@@ -1,5 +1,4 @@
-<html>
-
+<html lang="en">
 <head>
 	<meta charset='utf-8'>
 	<meta name="google-signin-scope" content="profile email">
@@ -69,27 +68,43 @@
 				<!-- LOGIN 학번 이름 INPUT -->
 				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
 				<!-- LOGIN BUTTON -->
-				<div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark">
 					<button class="login-button">
 						<img class="login_image" src="image/google.svg" onmouseover="this.src='image/google_hover.svg'"
 						onmouseout="this.src='image/google.svg'">
-						<script>
-							function onSignIn(googleUser) {
-								// Useful data for your client-side scripts:
-								var profile = googleUser.getBasicProfile();
-								console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-								console.log('Full Name: ' + profile.getName());
-								console.log('Given Name: ' + profile.getGivenName());
-								console.log('Family Name: ' + profile.getFamilyName());
-								console.log("Image URL: " + profile.getImageUrl());
-								console.log("Email: " + profile.getEmail());
-								// The ID token you need to pass to your backend:
-								var id_token = googleUser.getAuthResponse().id_token;
-								console.log("ID Token: " + id_token);
-							}
-						</script>
+						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        <script>
+                        function onSignIn(googleUser) {
+                            // Useful data for your client-side scripts:
+                            var profile = googleUser.getBasicProfile();
+                            var name = profile.getName();
+                            var image = profile.getImageUrl();
+                            var email = profile.getEmail();
+
+                            <?php
+                                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+                                $_name = "<script>document.write(name);</script>";
+                                $_image = "<script>document.write(image);</script>";
+                                $_email = "<script>document.write(email);</script>";
+ 
+                                $sql = "insert into user(name, image, email)
+                                values( '$_name', '$_image', '$_email')";
+
+								mysqli_query($conn, $sql);
+								
+								if ($_email == "s2019w17@e-mirim.hs.kr") {
+									echo "<script>location.href='admin.php'</script>";
+								}
+                            ?>
+
+							         
+
+                            // The ID token you need to pass to your backend:
+                            var id_token = googleUser.getAuthResponse().id_token;
+                            console.log("ID Token: " + id_token);
+                        }
+                            
+                        </script>   
 					</button>
-				</div>
 			</div>
 		</nav>
 	</header>
@@ -243,16 +258,39 @@
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
-        <form role="form" method="post" action="phrases_insert.php">
+		<form method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." name="input_text" id="input_text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text" name="input-text"></textarea>
 				<!-- 인덱스 출력 란 -->
-				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
+				<?php
+                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+
+                $sql = "select id, content from phrases order by id asc";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+
+                for($i = 0 ; $i < $num ; $i++) {
+                    $re = mysqli_fetch_array($result);
+                ?>
+
+				<!-- 인상 깊은 구절 데이터 불러오는 부분 -->
+				<p id="confirm-text">
+					<tr class="body_tr">
+						<!-- 도서목록 <책 번호> -->
+						<td width="97"><?php echo $re[0] ?></td>
+						<!-- 도서목록 <책 제목> -->
+						<td width="500" style="text-align: left;"><?php echo $re[1] ?></td>
+					</tr>
+				</p>
+
+                <?php
+                }
+                ?>
 				<!-- 인덱스 <저장> 버튼 -->
-				<input class="save-btn" type="submit" name="save" value="저장" id="save">
+				<input class="save-btn" type="submit" name="save" value="저장" id="save" onclick = "location.href = 'phrases_insert.php'">
 			</div>
-        </form>
+		</form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
