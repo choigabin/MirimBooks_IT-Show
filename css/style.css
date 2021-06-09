@@ -194,7 +194,7 @@ input::placeholder {
 }
 .login-popup {
     width: 434px;
-    height: 434px;
+    height: 650px;
     border-radius: 34px;
     background: #FFFFFF;
     position: fixed;

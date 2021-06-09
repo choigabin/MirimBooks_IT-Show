@@ -77,8 +77,11 @@
                             // Useful data for your client-side scripts:
                             var profile = googleUser.getBasicProfile();
                             var name = profile.getName();
+							console.log(name);
                             var image = profile.getImageUrl();
+							console.log(image);
                             var email = profile.getEmail();
+							console.log(email);
 
                             <?php
                                 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
@@ -96,11 +99,9 @@
 								}
                             ?>
 
-							         
-
-                            // The ID token you need to pass to your backend:
-                            var id_token = googleUser.getAuthResponse().id_token;
-                            console.log("ID Token: " + id_token);
+                            // // The ID token you need to pass to your backend:
+                            // var id_token = googleUser.getAuthResponse().id_token;
+                            // console.log("ID Token: " + id_token);
                         }
                             
                         </script>   
