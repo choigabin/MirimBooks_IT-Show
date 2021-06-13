@@ -59,54 +59,23 @@
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<div class="login-popup" id="popup">
-				<div class="cancel-container"><a href="#" class="cancel">
-						<img src="image/cancel.svg">
-					</a>
+			<form method="post" action="user_insert.php">
+				<div class="login-popup" id="popup">
+					<div class="cancel-container"><a href="#" class="cancel">
+							<img src="image/cancel.svg">
+						</a>
+					</div>
+					<img src="image/user.svg">
+					<!-- LOGIN 학번 INPUT -->
+					<input type="text" name="num" id="num" class="login-number" placeholder="학번을 입력해주세요. ex) 3314" />
+					<!-- LOGIN 이름 INPUT -->
+					<input type="text" name="name" id="name" class="login-number" placeholder="이름을 입력해주세요. ex) 홍길동"  />
+					<!-- LOGIN 이메일 INPUT -->
+					<input type="text" name="email" id="email" class="login-number" placeholder="이메일(학교 계정)을 입력해주세요." />
+					<!-- LOGIN BUTTON -->
+					<input type="submit" value="회원가입" class="login-button"/>
 				</div>
-				<img src="image/user.svg">
-				<!-- LOGIN 학번 이름 INPUT -->
-				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
-				<!-- LOGIN BUTTON -->
-					<button class="login-button">
-						<img class="login_image" src="image/google.svg" onmouseover="this.src='image/google_hover.svg'"
-						onmouseout="this.src='image/google.svg'">
-						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                        <script>
-                        function onSignIn(googleUser) {
-                            // Useful data for your client-side scripts:
-                            var profile = googleUser.getBasicProfile();
-                            var name = profile.getName();
-							console.log(name);
-                            var image = profile.getImageUrl();
-							console.log(image);
-                            var email = profile.getEmail();
-							console.log(email);
-
-                            <?php
-                                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-                                $_name = "<script>document.write(name);</script>";
-                                $_image = "<script>document.write(image);</script>";
-                                $_email = "<script>document.write(email);</script>";
- 
-                                $sql = "insert into user(name, image, email)
-                                values( '$_name', '$_image', '$_email')";
-
-								mysqli_query($conn, $sql);
-								
-								if ($_email == "s2019w17@e-mirim.hs.kr") {
-									echo "<script>location.href='admin.php'</script>";
-								}
-                            ?>
-
-                            // // The ID token you need to pass to your backend:
-                            // var id_token = googleUser.getAuthResponse().id_token;
-                            // console.log("ID Token: " + id_token);
-                        }
-                            
-                        </script>   
-					</button>
-			</div>
+			</form>
 		</nav>
 	</header>
 	<!-- banner -->
