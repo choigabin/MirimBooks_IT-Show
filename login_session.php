@@ -19,8 +19,8 @@ if($_POST["useremail"] == "" || $_POST["userpasswd"] == ""){
             //데이터베이스에 존재하는 이메일, 비번이라면 (회원이라면)
             if($result=mysqli_fetch_array(mysqli_query($conn,$sql))){ 
                 //세션 시작
-                session_save_path('./session');
                 session_start();
+                session_cache_expire(36000);
                 $_SESSION['useremail'] = $useremail;
                 $_SESSION['userpasswd'] = $userpasswd;
                 echo '<script> alert("로그인을 성공적으로 완료하였습니다!"); location.href="main.php" </script>';
