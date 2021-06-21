@@ -13,17 +13,16 @@ if($_POST["useremail"] == "" || $_POST["userpasswd"] == ""){
      
         //디비 접속
         $conn= mysqli_connect('localhost', 'root', '100412', 'mibooks');
-        //입력받은 이메일, 비번이 데이터베이스에 있는지 (회원인지)
+        //입력받은 이메일, 비번이 데이 터베이스에 있는지 (회원인지)
         $sql="select * from user where email = '$useremail'&& passwd = '$userpasswd'";
             //데이터베이스에 존재하는 이메일, 비번이라면 (회원이라면)
             if($result=mysqli_fetch_array(mysqli_query($conn,$sql))){ 
                 //세션 시작
+                session_save_path('./session');
                 session_start();
                 $_SESSION['useremail'] = $useremail;
                 $_SESSION['userpasswd'] = $userpasswd;
-
-                echo session_id();
-                echo var_dump($_SESSION);
+                echo '<script> alert("로그인을 성공적으로 완료하였습니다!"); location.href="main.php" </script>';
             }
             //정보를 잘못 입력했거나, 회원이 아니면
             else{
