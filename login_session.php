@@ -3,6 +3,7 @@
 if($_POST["useremail"] == "" || $_POST["userpasswd"] == ""){
     echo '<script> alert("아이디, 패스워드를 둘 다 입력해주세요!"); history.back(); </script>';
 //input 창에서 이메일과 비밀번호가 입력되었다면, 
+
 }else{
 
     //데이터베이스의 데이터를 가져와서 입력된 값이 데이터에 있는 지 확인
