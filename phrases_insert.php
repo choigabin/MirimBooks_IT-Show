@@ -1,10 +1,12 @@
+<!-- 인상깊은 구절 디비 연결 -->
 <?php
 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
 
+$_user = $_SESSION['useremail'];
 $_content = $_POST['input-text'];
 
-$sql = "insert into phrases(content)
-values( '$_content')";
+$sql = "insert into phrases(user, content)
+values('$_user', '$_content')";
 
 mysqli_query($conn, $sql);
 ?>
