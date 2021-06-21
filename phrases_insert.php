@@ -1,5 +1,6 @@
 <!-- 인상깊은 구절 디비 연결 -->
 <?php
+session_start();
 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
 
 $_user = $_SESSION['useremail'];
