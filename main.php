@@ -10,7 +10,7 @@ session_start();
     <meta name="google-signin-client_id" content="365726543848-dv3of5359i4bukccdlbejqa5nbnbe1rt.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style1.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
 	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	<title>MIBOOKS</title>
 </head>
@@ -64,7 +64,7 @@ session_start();
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<form method="post" action="login_proc.php">
+			<form method="post" action="logout_process.php">
 				<div class="login-popup" id="popup">
 					<div class="cancel-container"><a href="#" class="cancel">
 							<img src="image/cancel.svg">
@@ -72,13 +72,25 @@ session_start();
 					</div>
 					
 					<img src="image/user.svg">
+					<?php 
+					$user = $_SESSION['useremail'];
+					$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+					$sql = "select num, name from user where email = '{$user}'";
+
+					$result = mysqli_query($conn, $sql);
+					$num = mysqli_num_rows($result);
+                
+					for($i = 0 ; $i < $num ; $i++) {
+						$re = mysqli_fetch_array($result);
+					?>
+
 					<!-- LOGIN 이메일 INPUT -->
-					<input type="text" name="useremail" class="login-number" placeholder="이메일을 입력해주세요."/>
-					<!-- LOGIN 비밀번호 INPUT -->
-					<input type="password" name="userpasswd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
+					<label type="text" name="useremail" class="login-number"> <?php echo $re[0]."&nbsp;".$re[1]."님" ?> </label>
 					<!-- LOGIN BUTTON -->
-					<input type="submit" value="로그인" class="login-button"/>
-					
+					<input type="submit" value="로그아웃" class="login-button"/>
+					<?php
+					}
+					?>
 				</div>
 			</form>
 		</nav>
@@ -262,8 +274,9 @@ session_start();
                 <?php
                 }
                 ?>
+
 				<!-- 인덱스 <저장> 버튼 -->
-				<input class="save-btn" type="submit" name="save" value="저장" id="save" onclick = "location.href = 'phrases_insert.php'">
+				<input class="save-btn" type="submit" name="save" value="저장" id="save">
 			</div>
 		</form>
 			<div class="button-container">
@@ -383,7 +396,8 @@ session_start();
 					<!-- 도서목록 <책 번호> -->
 					<td width="97"><?php echo $count ?></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[0] ?></a></td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[0] ?></a>
+					<button type="submit" class="pro-btn">진행상황 등록</button></td>
 					<!-- 도서목록 <읽은 날짜> -->
 					<td width="274"><?php echo $re[1] ?></td>
 				</tr>
@@ -437,5 +451,4 @@ session_start();
 	<script type="text/javascript" src="js/timer.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
-
 </html>
