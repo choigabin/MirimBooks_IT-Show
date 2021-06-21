@@ -174,62 +174,14 @@
 		</div>
 		<div class="container">
 			<div>
-				<button onclick="start()" id="start" class="btn start">
-					<!-- <img src="image/stop_off.svg" class="start"> -->
-					<svg id="start_off" data-name="구성 요소 2 – 1" xmlns="http://www.w3.org/2000/svg" width="98"
-						height="97" viewBox="0 0 98 97">
-						<g id="start_circle" data-name="타원 31" fill="none" stroke="#386138" stroke-width="4">
-							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
-							<ellipse id="start_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
-						</g>
-						<line id="start_line_1" data-name="선 51" y2="37" transform="translate(39 30)" fill="none"
-							stroke="#386138" stroke-linecap="round" stroke-width="6" />
-						<line id="start_line_2" data-name="선 52" y2="37" transform="translate(59 30)" fill="none"
-							stroke="#386138" stroke-linecap="round" stroke-width="6" />
-					</svg>
-
+				<button onclick="start()" class="btn start">
+					<img src="image/start_off.svg" id="start" class="start">
 				</button>
-				<button onclick="stop()" id="stop" class="btn stop">
-					<!-- <img src="image/start_off.svg" alt=""> -->
-					<svg id="stop_off" data-name="구성 요소 3 – 1" xmlns="http://www.w3.org/2000/svg" width="98" height="97"
-						viewBox="0 0 98 97">
-						<g id="stop_circle" data-name="타원 21" fill="none" stroke="#386138" stroke-width="4">
-							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
-							<ellipse id="stop_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
-						</g>
-						<rect id="stop_square" data-name="사각형 42" width="33" height="32" rx="5"
-							transform="translate(33 33)" fill="#386138" />
-					</svg>
-
+				<button onclick="stop()" class="btn stop">
+					<img src="image/stop_off.svg" id="stop">
 				</button>
-				<button onclick="reset()" id="reset" class="btn stop">
-					<!-- <img src="image/reset_off.svg" alt=""> -->
-					<svg id="reset_off" data-name="구성 요소 4 – 1" xmlns="http://www.w3.org/2000/svg" width="98"
-						height="97" viewBox="0 0 98 97">
-						<g id="reset_circle" data-name="타원 22" fill="none" stroke="#386138" stroke-width="4">
-							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
-							<ellipse id="reset_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
-						</g>
-						<g id="그룹_7" data-name="그룹 7" transform="translate(35.514 16.889) rotate(14)">
-							<path id="reset_in_1" data-name="패스 14"
-								d="M39.05,0A19.525,19.525,0,0,1,19.525,19.525,19.525,19.525,0,0,1,0,0"
-								transform="translate(0 27.672)" fill="none" stroke="#386138" stroke-linejoin="round"
-								stroke-width="8" />
-							<path id="reset_in_2" data-name="패스 15"
-								d="M19.518,0A19.523,19.523,0,0,0,2.535,10.05,19.835,19.835,0,0,0,0,19.83"
-								transform="translate(0.007 8.147)" fill="none" stroke="#386138" stroke-linejoin="round"
-								stroke-width="8" />
-							<g id="reset_in_3-1" data-name="다각형 1" transform="translate(32.749) rotate(87)"
-								fill="#707070">
-								<path
-									d="M 8.750229835510254 9.857437133789063 L 6.839385986328125 9.857437133789063 L 7.794807434082031 8.158906936645508 L 8.750229835510254 9.857437133789063 Z"
-									stroke="none" />
-								<path id="reset_in_3"
-									d="M 7.79480504989624 -5.7220458984375e-06 L 15.5896053314209 13.8574275970459 L 4.76837158203125e-06 13.8574275970459 L 7.79480504989624 -5.7220458984375e-06 Z"
-									stroke="none" fill="#386138" />
-							</g>
-						</g>
-					</svg>
+				<button onclick="reset()"  class="btn stop">
+					<img src="image/reset_off.svg" id="reset">
 				</button>
 			</div>
 		</div>

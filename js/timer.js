@@ -1,7 +1,10 @@
 let hr = 0;
 let min = 0;
 let sec = 0;
-let t;  
+let t;
+let start_img = document.getElementById("start");
+let stop_img = document.getElementById("stop");
+let reset_img = document.getElementById("reset");
 
 function startTimer() {
     if (sec < 59) {
@@ -34,39 +37,24 @@ function print(val) {
     }
 }
 
-let start_icon = document.getElementById('start_off');
-let start_circle = document.getElementById('start_circle');
-let start_line_1 = document.getElementById('start_line_1');
-let start_line_2 = document.getElementById('start_line_2');
-let start_circle_in = document.getElementById('start_circle_in');
 function start() {
     t = setInterval(startTimer, 1000);
     document.getElementById('start').disabled = true;
-    start_circle.style.stroke = "transparent";
-    start_circle_in.style.fill = "#386138";
-    start_line_1.style.stroke = "#fff";
-    start_line_2.style.stroke = "#fff";
+
+    start_img.src = "image/start_on.png";
+    stop_img.src = "image/stop_off.png";
 }
 
-let stop_icon = document.getElementById('stop_off');
-let stop_circle = document.getElementById('stop_circle');
-let stop_square = document.getElementById('stop_square');
-let stop_circle_in = document.getElementById('stop_circle_in');
+//stop 
 function stop() {
     clearInterval(t);
     document.getElementById('start').disabled = false;
-    stop_circle.style.stroke = "transparent";
-    stop_circle_in.style.fill = "#386138";
-    stop_square.style.fill = "#fff";
+
+    start_img.src = "image/start_off.png";
+    stop_img.src = "image/stop_on.png";
 }
 
-let reset_icon = document.getElementById('reset_off');
-let reset_circle = document.getElementById('reset_circle');
-let reset_square = document.getElementById('reset_square');
-let reset_circle_in = document.getElementById('reset_circle_in');
-let reset_in_1 = document.getElementById('reset_in_1');
-let reset_in_2 = document.getElementById('reset_in_2');
-let reset_in_3 = document.getElementById('reset_in_3');
+//reset
 function reset() {
     clearInterval(t);
     min = 0;
@@ -75,10 +63,8 @@ function reset() {
     document.getElementById('sec').innerHTML = '00';
     document.getElementById('min').innerHTML = '00';
     document.getElementById('hr').innerHTML = '00';
-    reset_circle.style.stroke = "transparent";
-    reset_circle_in.style.fill = "#386138";
-    reset_in_1.style.stroke = "#fff";
-    reset_in_2.style.stroke = "#fff";
-    reset_in_3.style.fill = "#fff";
+
+    start_img.src = "image/start_off.png";
+    stop_img.src = "image/stop_off.png";
 
 }
