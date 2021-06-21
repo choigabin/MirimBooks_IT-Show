@@ -1,4 +1,8 @@
 <!-- 로그인 화면 -->
+<?php
+session_start();
+?>
+
 <html lang="en">
 <head>
 	<meta charset='utf-8'>
@@ -236,8 +240,8 @@
 				<!-- 인덱스 출력 란 -->
 				<?php
                 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-
-                $sql = "select id, content from phrases order by id asc";
+				$user = $_SESSION['useremail'];
+                $sql = "select id, content from phrases where user = '{$user}' order by id asc";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
@@ -317,7 +321,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="book">
 					<img src="image/book_icon.svg">
 					<div class="bookinfo-container">
@@ -353,7 +357,7 @@
 			<h1>도서 목록</h1>
 			<div class="line"></div>
 		</div>
-		<table>
+		<table id="table-1">
 			<thead>
 				<tr class="head_tr">
 					<td width="97">NO</td>
@@ -364,22 +368,24 @@
 			<tbody>
                 <?php
                 $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+				$user = $_SESSION['useremail'];
 
-                $sql = "select id, plus_title, plus_writer from add_book order by id asc";
+                $sql = "select plus_title, plus_writer from add_book where user = '{$user}' order by id asc";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
                 for($i = 0 ; $i < $num ; $i++) {
                     $re = mysqli_fetch_array($result);
+					$count = 1
                 ?>
 
 				<tr class="body_tr">
 					<!-- 도서목록 <책 번호> -->
-					<td width="97"><?php echo $re[0] ?></td>
+					<td width="97"><?php echo $count ?></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[1] ?></a></td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[0] ?></a></td>
 					<!-- 도서목록 <읽은 날짜> -->
-					<td width="274"><?php echo $re[2] ?></td>
+					<td width="274"><?php echo $re[1] ?></td>
 				</tr>
                 <?php
                 }
