@@ -355,7 +355,7 @@
 			<h1>도서 목록</h1>
 			<div class="line"></div>
 		</div>
-		<table>
+		<table id="table-1">
 			<thead>
 				<tr class="head_tr">
 					<td width="97">NO</td>
@@ -364,28 +364,14 @@
 				</tr>
 			</thead>
 			<tbody>
-                <?php
-                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-
-                $sql = "select id, plus_title, plus_writer from add_book order by id asc";
-                $result = mysqli_query($conn, $sql);
-                $num = mysqli_num_rows($result);
-
-                for($i = 0 ; $i < $num ; $i++) {
-                    $re = mysqli_fetch_array($result);
-                ?>
-
 				<tr class="body_tr">
 					<!-- 도서목록 <책 번호> -->
-					<td width="97"><?php echo $re[0] ?></td>
+					<td width="97"></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;"><?php echo $re[1] ?></td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"></a></td>
 					<!-- 도서목록 <읽은 날짜> -->
-					<td width="274"><?php echo $re[2] ?></td>
+					<td width="274"></td>
 				</tr>
-                <?php
-                }
-                ?>
 			</tbody>
 		</table>
 		<a href="#no_ptplo">팝업</a>
