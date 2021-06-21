@@ -147,7 +147,7 @@
 				<li><label for="slide03"></label></li>
 			</ul>
 		</div>
-	</div>
+	</div>   
 
 	<!-- timer -->
 	<div id="timer" class="timer_area">
