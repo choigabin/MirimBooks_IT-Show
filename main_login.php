@@ -1,3 +1,4 @@
+<!-- 로그인 화면 -->
 <html lang="en">
 <head>
 	<meta charset='utf-8'>
@@ -13,7 +14,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main_login.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="#timer">타이머</a></li>
 				<li><a href="#index">인덱스</a></li>
@@ -59,7 +60,7 @@
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<form method="post" action="login_proc.php">
+			<form method="post" action="login_session.php">
 				<div class="login-popup" id="popup">
 					<div class="cancel-container"><a href="#" class="cancel">
 							<img src="image/cancel.svg">
@@ -68,9 +69,9 @@
 					
 					<img src="image/user.svg">
 					<!-- LOGIN 이메일 INPUT -->
-					<input type="text" name="email" class="login-number" placeholder="이메일을 입력해주세요."/>
+					<input type="text" name="useremail" class="login-number" placeholder="이메일을 입력해주세요."/>
 					<!-- LOGIN 비밀번호 INPUT -->
-					<input type="password" name="passwd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
+					<input type="password" name="userpasswd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
 					<!-- LOGIN BUTTON -->
 					<input type="submit" value="로그인" class="login-button"/>
 					

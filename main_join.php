@@ -1,3 +1,4 @@
+<!-- 회원가입 화면 -->
 <html lang="en">
 <head>
 	<meta charset='utf-8'>
@@ -13,7 +14,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main_join.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="#timer">타이머</a></li>
 				<li><a href="#index">인덱스</a></li>
