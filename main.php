@@ -1,3 +1,4 @@
+<!-- 로그인 화면 -->
 <html lang="en">
 <head>
 	<meta charset='utf-8'>
@@ -5,7 +6,7 @@
     <meta name="google-signin-client_id" content="365726543848-dv3of5359i4bukccdlbejqa5nbnbe1rt.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
 	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	<title>MIBOOKS</title>
 </head>
@@ -13,7 +14,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="#timer">타이머</a></li>
 				<li><a href="#index">인덱스</a></li>
@@ -49,7 +50,7 @@
                         <!-- <저자> 도서 등록 INPUT -->
                         <input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
                         <!-- <출판사> 도서 등록 INPUT -->
-                        <input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
+                        <input type="text" id="plus_publisher" name="plus_publisher" placeholder="출판사">
                         <!-- <페이지 수> 도서 등록 INPUT -->
                         <input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
                         <!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
@@ -59,21 +60,21 @@
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<form method="post" action="user_insert.php">
+			<form method="post" action="login_proc.php">
 				<div class="login-popup" id="popup">
 					<div class="cancel-container"><a href="#" class="cancel">
 							<img src="image/cancel.svg">
 						</a>
 					</div>
+					
 					<img src="image/user.svg">
-					<!-- LOGIN 학번 INPUT -->
-					<input type="text" name="num" id="num" class="login-number" placeholder="학번을 입력해주세요. ex) 3314" />
-					<!-- LOGIN 이름 INPUT -->
-					<input type="text" name="name" id="name" class="login-number" placeholder="이름을 입력해주세요. ex) 홍길동"  />
 					<!-- LOGIN 이메일 INPUT -->
-					<input type="text" name="email" id="email" class="login-number" placeholder="이메일(학교 계정)을 입력해주세요." />
+					<input type="text" name="useremail" class="login-number" placeholder="이메일을 입력해주세요."/>
+					<!-- LOGIN 비밀번호 INPUT -->
+					<input type="password" name="userpasswd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
 					<!-- LOGIN BUTTON -->
-					<input type="submit" value="회원가입" class="login-button"/>
+					<input type="submit" value="로그인" class="login-button"/>
+					
 				</div>
 			</form>
 		</nav>
@@ -298,6 +299,7 @@
 					stroke-linejoin="round" stroke-width="4" opacity="0.29" />
 			</svg>
 			<div class="percent-box">
+
 				<div class="book">
 					<!-- 아이콘 최대 크기임. -->
 					<!-- 책 아이콘 -->
@@ -315,6 +317,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="book">
 					<img src="image/book_icon.svg">
 					<div class="bookinfo-container">
@@ -374,7 +377,7 @@
 					<!-- 도서목록 <책 번호> -->
 					<td width="97"><?php echo $re[0] ?></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;"><?php echo $re[1] ?></td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[1] ?></a></td>
 					<!-- 도서목록 <읽은 날짜> -->
 					<td width="274"><?php echo $re[2] ?></td>
 				</tr>
