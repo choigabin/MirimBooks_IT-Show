@@ -1,6 +1,6 @@
+<!-- 포트폴리오 조회 화면 -->
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/potfolio.css">
@@ -87,52 +87,36 @@
 				<p class="description">책에서만 쓴 독서 포트폴리오를<br />
 					미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
 			</div>
-			<div class="info">
-			<?php
-			$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-			$sql = "select title, writer, publisher, date, content from where id = 1 portfolio order by id asc";
-			$result = mysqli_query($conn, $sql);
-			$num = mysqli_num_rows($result);
 
-			for($i = 0 ; $i < $num ; $i++) {
+			<div class="info">
+			<!-- 포트폴리오 디비에서 꺼내오기 -->
+			<?php
+				$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+				$sql = "select p.title, p.writer, p.publisher, p.date, p.content
+						from add_book a, portfolio p
+						where a.plus_title = p.title;";
+				$result = mysqli_query($conn, $sql);
+				$num = mysqli_num_rows($result);
+
 				$re = mysqli_fetch_array($result);
 			?>
-			}
 				<div class="title container">
-					<label for="title">책 제목</label>
-					<!-- 책 제목 INPUT-->
-					<textarea value=<?php echo $re[0] ?>>
-					<!-- <input type="text" name="title" id="title"> -->
+					<label for="title">책 제목 &nbsp;<?php echo $re[0] ?> </label>
+					
 				</div>
 				<div class="writer container">
-					<label for="writer">저자</label>
-					<!-- 저자 INPUT -->
-					<textarea value=<?php echo $re[1] ?>>
-					<!-- <input type="text" name="writer" id="writer" /> -->
+					<label for="writer">저자 &nbsp;<?php echo $re[1] ?> </label>
 				</div>
 				<div class="publisher container">
-					<label for="publisher">출판사</label>
-					<!-- 출판사 INPUT -->
-					<textarea value=<?php echo $re[2] ?>>
-					<!-- <input type="text" name="publisher" id="publisher" /> -->
+					<label for="publisher">출판사 &nbsp;<?php echo $re[2] ?> </label>
 				</div>
 				<div class="date container">
-					<label for="date">읽은 날짜</label>
-					<!-- 읽은 날짜 INPUT -->
-					<textarea value=<?php echo $re[3] ?>>
-					<!-- <input type="text" name="date" id="date" /> -->
+					<label for="date">읽은 날짜 &nbsp;<?php echo $re[3] ?> </label>
 				</div>
 			</div>
 			<div class="main-container">
-				<!-- 독서 내용 입력 -->
-				<textarea name="content" placeholder="내용" id="content" class="textarea_size" 
-					onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"
-					value=<?php echo $re[4] ?>></textarea>
-				
-					<?php
-						}
-					?>
-
+				<textarea name="content" placeholder="내용" id="content" class="textarea_size"
+					onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"><?php echo $re[4] ?></textarea>
 				<script>
 					cmaTextareaSize('content', 612);
 				</script>
@@ -145,6 +129,7 @@
 			</div>
 		</div>
 	</form>
+	<!-- FOOTER -->
 	<footer>
 		<div class="footer-container">
 			<div class="link-container">
@@ -175,4 +160,5 @@
 		</div>
 	</footer>
 </body>
+
 </html>
