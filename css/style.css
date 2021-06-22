@@ -461,7 +461,7 @@ input::placeholder {
 	outline: none;
 }
 
-.input-box p {
+.output-box p {
 	display: none;
 	margin-top: 20px;
 	margin-left: 20px;
