@@ -247,40 +247,14 @@ session_start();
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
-		<form method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text" name="input-text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text"></textarea>
 				<!-- 인덱스 출력 란 -->
-				<?php
-                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-				$user = $_SESSION['useremail'];
-                $sql = "select id, content from phrases where user = '{$user}' order by id asc";
-                $result = mysqli_query($conn, $sql);
-                $num = mysqli_num_rows($result);
-
-                for($i = 0 ; $i < $num ; $i++) {
-                    $re = mysqli_fetch_array($result);
-                ?>
-
-				<!-- 인상 깊은 구절 데이터 불러오는 부분 -->
-				<p id="confirm-text">
-					<tr class="body_tr">
-						<!-- 도서목록 <책 번호> -->
-						<td width="97"><?php echo $re[0] ?></td>
-						<!-- 도서목록 <책 제목> -->
-						<td width="500" style="text-align: left;"><?php echo $re[1] ?></td>
-					</tr>
-				</p>
-
-                <?php
-                }
-                ?>
-
+				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
 				<!-- 인덱스 <저장> 버튼 -->
 				<input class="save-btn" type="submit" name="save" value="저장" id="save">
 			</div>
-		</form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
