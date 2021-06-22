@@ -26,11 +26,13 @@ session_start();
 				<li><a href="#book_list">목록</a></li>
 				<li><a href="potfolio.html">독서포트폴리오</a></li>
 			</ul>
-			<div class="search_data">
-				<!-- 메뉴바 도서 검색 INPUT -->
-				<input type="search" placeholder="관심 도서를 검색해주세요.">
-				<a href="search.html"><img src="image/search.svg"></a>
-			</div>
+			<form method="post" action="search.php">
+				<div class="search_data">
+					<!-- 메뉴바 도서 검색 INPUT -->
+					<input type="search" placeholder="도서 검색하러가기" name="input-search">
+					<a href="search.php"><img src="image/search.svg"></a>
+				</div>
+			</form>
 			<a href="#plus"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
 					class="plus">
 					<g id="그룹_15" data-name="그룹 15" transform="translate(-1560 -15)">
