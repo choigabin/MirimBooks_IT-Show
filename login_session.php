@@ -13,7 +13,7 @@ if($_POST["useremail"] == "" || $_POST["userpasswd"] == ""){
         $userpasswd=$_POST['userpasswd'];//입력받은 비번 데이터를 userpasswd라는 변수에 할당
      
         //디비 접속
-        $conn= mysqli_connect('localhost', 'root', '100412', 'mibooks');
+        $conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
         //입력받은 이메일, 비번이 데이 터베이스에 있는지 (회원인지)
         $sql="select * from user where email = '$useremail'&& passwd = '$userpasswd'";
             //데이터베이스에 존재하는 이메일, 비번이라면 (회원이라면)
