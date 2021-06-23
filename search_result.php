@@ -1,5 +1,5 @@
+<!-- 검색 화면 -->
 <html>
-
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/search.css">
@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+            <a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
             <ul>
                 <li><a href="main.html#timer">타이머</a></li>
                 <li><a href="main.html#index">인덱스</a></li>
@@ -84,70 +84,44 @@
                 <span class="related-search">연관검색어 | </span>
                 <!-- 연관 검색어 -->
                 <span class="related-search-word">html</span>
-                <span class="related-search-word">JavaScript</span>
+                <span class="related-search-word">안드로이드</span>
                 <span class="related-search-word">C언어</span>
                 <span class="related-search-word">PHP</span>
                 <span class="related-search-word">데이터베이스</span>
             </div>
         </div>
+
+        
         <div class="search-container">
             <div class="book">
-                <!-- 책 이미지 -->
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <!-- 책 제목 -->
-                    <p class="title">배움의 발견</p>
-                    <!-- 책 설명 -->
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
+
+        <?php
+
+            $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+
+            $search = $_POST['search-name'];
+            $sql = "select img, teacher, title, content, link from search where teacher like '%'{$search}'%' or title like '%'{$search}'%' or content like '%'{$search}'%'";
+
+            $result = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($result);
+
+            for($i = 0 ; $i < $num ; $i++) {
+						$re = mysqli_fetch_array($result);
+        ?>
+            <!-- 책 이미지 -->
+            <img src="<?php echo $re[0] ?>" class="book-image" /> 
+            <div class="info">
+                <p class="recommend"><?php echo $re[1]."님의 PICK!" ?></p>
+                <!-- 책 제목 -->
+                <p class="title"><?php echo $re[2] ?></p>
+                <!-- 책 설명 -->
+                <p class="description"><?php echo $re[3] ?></p>
+        <?php
+            }
+        ?>
             </div>
-            <div class="book">
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <p class="title">배움의 발견</p>
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <p class="title">배움의 발견</p>
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <p class="title">배움의 발견</p>
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <p class="title">배움의 발견</p>
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/Educated.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">전공 선생님의 강추 책!</p>
-                    <p class="title">배움의 발견</p>
-                    <p class="description">여기는 책에 대한 간략한 설명
-                        무슨 내용이 있고 언제 읽으면 좋은지</p>
-                </div>
-            </div>
+        </div>
+            
         </div>
     </div>
     <footer>

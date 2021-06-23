@@ -360,7 +360,7 @@ textarea:focus {
 	cursor: pointer;
 }
 footer {
-	height: 180px;
+	height: 200px;
 	background: #DFDFDF;
 	font-weight: 400;
 }
@@ -380,8 +380,8 @@ footer .link-container ul li {
 	float: left;
 	margin-right: 20px;
 	font-weight: bold;
-	font-size: 12px;
-	margin-top: 30px;
+	font-size: 15px;
+	margin-top: 35px;
 }
 footer .link-container {
 	overflow: auto;
@@ -390,7 +390,7 @@ footer .address-container {
 	padding-top: 10px;
 	clear: both;
 	text-align: left;
-	font-size: 12px;
+	font-size: 15px;
 }
 footer .tel-container {
 	padding-bottom: 15px;
@@ -404,7 +404,7 @@ footer .tel-container ul li {
 	float: left;
 	margin-right: 30px;
 	margin-left: 0px;
-	font-size: 12px;
+	font-size: 15px;
 }
 footer .tel-container ul li strong {
 	font-weight: bold;
@@ -416,7 +416,7 @@ footer .line {
 	margin-bottom: 15px;
 }
 footer .info-container ul li {
-	font-size: 12px;
+	font-size: 15px;
 	margin-right: 40px;
 	float: left;
 	font-weight: bold;

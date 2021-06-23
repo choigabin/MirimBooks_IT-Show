@@ -330,7 +330,7 @@ input:focus {
 }
 /* footer */
 footer {
-	height: 180px;
+	height: 200px;
 	background: #DFDFDF;
     font-weight: 400;
 }
@@ -349,8 +349,8 @@ a {
 	float: left;
 	margin-right: 20px;
 	font-weight: bold;
-	font-size: 12px;
-	margin-top: 30px;
+	font-size: 15px;
+	margin-top: 35px;
 }
 .link-container {
 	overflow: auto;
@@ -359,7 +359,7 @@ a {
 	padding-top: 10px;
 	clear: both;
 	text-align: left;
-	font-size: 12px;
+	font-size: 15px;
 }
 .tel-container {
 	padding-bottom: 15px;
@@ -373,7 +373,7 @@ a {
 	float: left;
 	margin-right: 30px;
     margin-left: 0px;
-	font-size: 12px;
+	font-size: 15px;
 }
 .tel-container ul li strong {
 	font-weight: bold;
@@ -385,7 +385,7 @@ a {
 	margin-bottom: 15px;
 }
 .info-container ul li {
-	font-size: 12px;
+	font-size: 15px;
 	margin-right: 40px;
 	float: left;
 	font-weight: bold;

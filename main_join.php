@@ -1,5 +1,5 @@
-<html>
-
+<!-- 회원가입 화면 -->
+<html lang="en">
 <head>
 	<meta charset='utf-8'>
 	<meta name="google-signin-scope" content="profile email">
@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main_join.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="#timer">타이머</a></li>
 				<li><a href="#index">인덱스</a></li>
@@ -42,56 +42,45 @@
 						<img src="image/cancel.svg">
 					</a>
 				</div>
-				<form role="form" method="post" action="book_insert.php"></form>
-				<div class="plus-input-container">
-					<p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
-					<!-- <책 제목> 도서 등록 INPUT -->
-					<input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
-					<!-- <저자> 도서 등록 INPUT -->
-					<input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
-					<!-- <출판사> 도서 등록 INPUT -->
-					<input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
-					<!-- <페이지 수> 도서 등록 INPUT -->
-					<input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
-					<!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
-					<input type="submit" id="plus-submit" class="plus-button" value="확인">
-				</div>
+				<form role="form" method="post" action="book_insert.php">
+                    <div class="plus-input-container">
+                        <p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
+                        <!-- <책 제목> 도서 등록 INPUT -->
+                        <input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
+                        <!-- <저자> 도서 등록 INPUT -->
+                        <input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
+                        <!-- <출판사> 도서 등록 INPUT -->
+                        <input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
+                        <!-- <페이지 수> 도서 등록 INPUT -->
+                        <input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
+                        <!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
+                        <input type="submit" id="plus-submit" class="plus-button" value="확인">
+                    </div>
 				</form>
 			</div>
-				
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<div class="login-popup" id="popup">
-				<div class="cancel-container"><a href="#" class="cancel">
-						<img src="image/cancel.svg">
-					</a>
+			<form method="post" action="user_insert.php">
+				<div class="login-popup" id="popup">
+					<div class="cancel-container"><a href="#" class="cancel">
+							<img src="image/cancel.svg">
+						</a>
+					</div>
+					
+					<img src="image/user.svg">
+					<!-- LOGIN 학번 INPUT -->
+					<input type="text" name="num" class="login-number" placeholder="학번을 입력해주세요. ex) 3314" />
+					<!-- LOGIN 이름 INPUT -->
+					<input type="text" name="name" class="login-number" placeholder="이름을 입력해주세요."/>
+					<!-- LOGIN 이메일 INPUT -->
+					<input type="text" name="email" class="login-number" placeholder="이메일을 입력해주세요."/>
+					<!-- LOGIN 비밀번호 INPUT -->
+					<input type="password" name="passwd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
+					<!-- LOGIN BUTTON -->
+					<input type="submit" value="회원가입" class="login-button"/>
+					
 				</div>
-				<img src="image/user.svg">
-				<!-- LOGIN 학번 이름 INPUT -->
-				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
-				<!-- LOGIN BUTTON -->
-				<div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark">
-					<button class="login-button">
-						<img class="login_image" src="image/google.svg" onmouseover="this.src='image/google_hover.svg'"
-						onmouseout="this.src='image/google.svg'">
-						<script>
-							function onSignIn(googleUser) {
-								// Useful data for your client-side scripts:
-								var profile = googleUser.getBasicProfile();
-								console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-								console.log('Full Name: ' + profile.getName());
-								console.log('Given Name: ' + profile.getGivenName());
-								console.log('Family Name: ' + profile.getFamilyName());
-								console.log("Image URL: " + profile.getImageUrl());
-								console.log("Email: " + profile.getEmail());
-								// The ID token you need to pass to your backend:
-								var id_token = googleUser.getAuthResponse().id_token;
-								console.log("ID Token: " + id_token);
-							}
-						</script>
-					</button>
-				</div>
-			</div>
+			</form>
 		</nav>
 	</header>
 	<!-- banner -->
@@ -244,14 +233,39 @@
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
+		<form method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text" name="input-text"></textarea>
 				<!-- 인덱스 출력 란 -->
-				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
+				<?php
+                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+
+                $sql = "select id, content from phrases order by id asc";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+
+                for($i = 0 ; $i < $num ; $i++) {
+                    $re = mysqli_fetch_array($result);
+                ?>
+
+				<!-- 인상 깊은 구절 데이터 불러오는 부분 -->
+				<p id="confirm-text">
+					<tr class="body_tr">
+						<!-- 도서목록 <책 번호> -->
+						<td width="97"><?php echo $re[0] ?></td>
+						<!-- 도서목록 <책 제목> -->
+						<td width="500" style="text-align: left;"><?php echo $re[1] ?></td>
+					</tr>
+				</p>
+
+                <?php
+                }
+                ?>
 				<!-- 인덱스 <저장> 버튼 -->
-				<input class="save-btn" type="submit" name="save" value="저장" id="save">
+				<input class="save-btn" type="submit" name="save" value="저장" id="save" onclick = "location.href = 'phrases_insert.php'">
 			</div>
+		</form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
@@ -341,33 +355,22 @@
 			<h1>도서 목록</h1>
 			<div class="line"></div>
 		</div>
-		<table>
+		<table id="table-1">
 			<thead>
 				<tr class="head_tr">
 					<td width="97">NO</td>
 					<td width="809" style="text-align: left;">책 제목</td>
-					<td width="274">날짜</td>
+					<td width="274">저자</td>
 				</tr>
 			</thead>
 			<tbody>
-
 				<tr class="body_tr">
 					<!-- 도서목록 <책 번호> -->
-					<td width="97">003</td>
+					<td width="97"></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;">확인용</td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"></a></td>
 					<!-- 도서목록 <읽은 날짜> -->
-					<td width="274">2021.04.12</td>
-				</tr>
-				<tr class="body_tr">
-					<td width="97">002</td>
-					<td width="809" style="text-align: left;">확인용</td>
-					<td width="274">2021.04.12</td>
-				</tr>
-				<tr class="body_tr">
-					<td width="97">001</td>
-					<td width="809" style="text-align: left;">확인용</td>
-					<td width="274">2021.04.12</td>
+					<td width="274"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -376,7 +379,7 @@
 			<div class="cancel-container"><a href="#book_list" class="cancel">
 					<img src="image/cancel.svg">
 				</a>
-				<div class="no_ptople_text">아직 작성된 독서포트폴리오가 없습니다. <br>새로운 독서포트폴리오를 작성하겠습니까?</div>
+				<div class="no_ptople_text">아직 작성된 독서포트폴리오가 없습니다. <br>새로운 독서포트폴리오를 작성히겠습니까?</div>
 			</div>
 			<!-- 독포 쓰러가는 BUTTON -->
 			<button class="ptplo_btn ptplo_yes">네, 쓸래요!</button>
@@ -384,7 +387,6 @@
 			<button class="ptplo_btn ptplo_no">아니요, 안 쓸래요</button>
 		</div>
 	</div>
-	<!-- FOOTER -->
 	<footer>
 		<div class="container">
 			<div class="link-container">

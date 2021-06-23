@@ -194,7 +194,7 @@ input::placeholder {
 }
 .login-popup {
     width: 434px;
-    height: 620px;
+    height: 380px;
     border-radius: 34px;
     background: #FFFFFF;
     position: fixed;
@@ -216,22 +216,11 @@ input::placeholder {
     height: 116px;
 }
 .login-number {
-    width: 357px;
-    height: 57px;
-    border-radius: 27px;
-    border: 1px solid #707070;
+    font-size: 25px;
+    text-align: center;
     background: #FFFFFF;
     text-indent: 20px;
     margin-top: 25px;
-}
-.login-number:focus {
-    outline: none;
-}
-.login-number::placeholder {
-    font-size: 14px;
-    color: #000000;
-    opacity: 0.24;
-    font-weight: lighter;
 }
 .login-button {
     display: block;
@@ -439,7 +428,7 @@ input::placeholder {
 	width: 1180px;
 	height: 430px;
 }
-.input-output-box {
+.input-box {
 	width: 1110px;
 	height: 430px;
 	float: left;
@@ -461,7 +450,7 @@ input::placeholder {
 	outline: none;
 }
 
-.output-box p {
+.input-box p {
 	display: none;
 	margin-top: 20px;
 	margin-left: 20px;
@@ -517,14 +506,12 @@ button:focus {
 }
 
 /* percent */
-percent-box svg {
-	display: block;
-}
 .percent-container {
     margin-bottom: 100px;
 }
 .percent-all {
 	width: fit-content;
+    height: fit-content;
 	display: flex;
 	margin: 0 auto;
 	flex-direction: row;
@@ -532,22 +519,23 @@ percent-box svg {
 }
 .percent-box {
 	margin: 0;
-	height: 500px;
-	width: fit-content;
+	height: fit-content;
+	width: 1180px;
 	display: flex;
+    flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: start;
 	padding-top: 50px;
-    block-size: fit-content;
 }
 .book {
 	text-align: center;
 	width: 350px;
 	margin-left: 15px;
 	margin-right: 15px;
+    margin-top: 40px;
 }
 .bookinfo-container {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 .bookname {
 	font-size: 20px;
@@ -589,6 +577,28 @@ percent-box svg {
 
 #book_list .title {
     padding-bottom: 70;
+}
+.pro-btn {
+	width: 90px;
+	height: 48px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+	color: black;
+	background: #F5F5F5;
+	border-radius: 34px;
+	float: right;
+	margin-right: 40px;
+	margin-top: -10px;
+	border: none;
+	font-weight: bold;
+}
+.pro-btn:hover {
+	color: white;
+	background: #386138;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.pro-btn:focus {
+	outline: none;
 }
 
 table {
@@ -659,7 +669,7 @@ tbody {
 }
 /* footer */
 footer {
-	height: 180px;
+	height: 200px;
 	background: #DFDFDF;
     text-align: left;
 }
@@ -675,8 +685,8 @@ footer a {
 	float: left;
 	margin-right: 20px;
 	font-weight: bold;
-	font-size: 12px;
-	margin-top: 30px;
+	font-size: 15px;
+	margin-top: 35px;
 }
 .link-container {
 	overflow: auto;
@@ -685,7 +695,7 @@ footer a {
 	padding-top: 10px;
 	clear: both;
 	text-align: left;
-	font-size: 12px;
+	font-size: 15px;
 }
 .tel-container {
 	padding-bottom: 15px;
@@ -700,7 +710,7 @@ footer a {
 	float: left;
 	margin-right: 30px;
     margin-left: 0px;
-	font-size: 12px;
+	font-size: 15px;
 }
 .tel-container ul li strong {
 	font-weight: bold;
@@ -712,7 +722,7 @@ footer .line {
 	margin-bottom: 15px;
 }
 .info-container ul li {
-	font-size: 12px;
+	font-size: 15px;
 	margin-right: 40px;
 	float: left;
 	font-weight: bold;
