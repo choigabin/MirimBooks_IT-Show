@@ -120,14 +120,13 @@ input::placeholder {
     margin-top: -12px;
     padding-top: 5px;
 }
-.plus {
+.book_icon{
     width: 46px;
     height: 46px;
     padding-left: 31px;
-    margin-top: -12px;
-    padding-top: 5px;
+    margin-top: -10px;
+    padding-top: 6px;
 }
-
 .book-plus {
     width: 440px;
     height: 591px;
@@ -612,7 +611,10 @@ table {
     text-align: center;
 
 }
-
+tr:hover:not(.head_tr) {
+    background-color:#f2f2f2;
+    cursor: pointer;
+}
 tbody {
     box-shadow: 7px 8px 13px rgba(0, 0, 0, 0.1);
 }
@@ -624,6 +626,7 @@ tbody {
     z-index: -1;
     border-bottom: 1px solid rgb(236, 236, 236);
 }
+
 .no_ptplo_popup{
     /* position: absolute; */
     left: 50%;

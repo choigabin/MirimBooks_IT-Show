@@ -33,16 +33,8 @@ session_start();
 					<a href="search.php"><img src="image/search.svg"></a>
 				</div>
 			</form>
-			<a href="#plus"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
-					class="plus">
-					<g id="그룹_15" data-name="그룹 15" transform="translate(-1560 -15)">
-						<circle id="타원_31" data-name="타원 31" cx="23" cy="23" r="23" transform="translate(1560 15)"
-							fill="#dcdcdc" />
-						<path id="plus_icon"
-							d="M31.214,13.766H19.794V2.294A2.29,2.29,0,0,0,17.51,0H15.988A2.29,2.29,0,0,0,13.7,2.294V13.766H2.284A2.29,2.29,0,0,0,0,16.061V17.59a2.29,2.29,0,0,0,2.284,2.294H13.7V31.356a2.29,2.29,0,0,0,2.284,2.294H17.51a2.29,2.29,0,0,0,2.284-2.294V19.884h11.42A2.29,2.29,0,0,0,33.5,17.59V16.061A2.29,2.29,0,0,0,31.214,13.766Zm0,0"
-							transform="translate(1566.251 21.175)" fill="#fff" />
-					</g>
-				</svg></a>
+			<!-- 책 추가 이미지 변경 -->
+			<a href="#plus"><img src="image/book_icon.svg" class="book_icon"></a>
 			<div id="plus" class="book-plus">
 				<div class="cancel-container"><a href="#" class="cancel">
 						<img src="image/cancel.svg">
@@ -72,7 +64,6 @@ session_start();
 							<img src="image/cancel.svg">
 						</a>
 					</div>
-					
 					<img src="image/user.svg">
 					<?php 
 					$user = $_SESSION['useremail'];
