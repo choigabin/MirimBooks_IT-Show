@@ -25,7 +25,7 @@
 				<li><a href="main.php#timer">타이머</a></li>
 				<li><a href="main.php#index">인덱스</a></li>
 				<li><a href="main.php#percent">독서진행률</a></li>
-				<li><a href="main.v#book_list">목록</a></li>
+				<li><a href="main.php#book_list">목록</a></li>
 				<li><a href="potfolio.php">독서포트폴리오</a></li>
 			</ul>
 			<div class="search_data">
