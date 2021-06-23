@@ -24,12 +24,12 @@ session_start();
 				<li><a href="#index">인덱스</a></li>
 				<li><a href="#percent">독서진행률</a></li>
 				<li><a href="#book_list">목록</a></li>
-				<li><a href="potfolio.html">독서포트폴리오</a></li>
+				<li><a href="potfolio.php">독서포트폴리오</a></li>
 			</ul>
 			<form method="post" action="search.php">
 				<div class="search_data">
 					<!-- 메뉴바 도서 검색 INPUT -->
-					<input type="search" placeholder="도서 검색하러가기" name="input-search">
+					<input type="search" placeholder="선생님 PICK 도서 보러가기" name="input-search">
 					<a href="search.php"><img src="image/search.svg"></a>
 				</div>
 			</form>
@@ -43,28 +43,28 @@ session_start();
 							transform="translate(1566.251 21.175)" fill="#fff" />
 					</g>
 				</svg></a>
-			<div id="plus" class="book-plus">
-				<div class="cancel-container"><a href="#" class="cancel">
-						<img src="image/cancel.svg">
-					</a>
-				</div>
-				<form role="form" method="post" action="book_insert.php">
-                    <div class="plus-input-container">
-                        <p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
-                        <!-- <책 제목> 도서 등록 INPUT -->
-                        <input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
-                        <!-- <저자> 도서 등록 INPUT -->
-                        <input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
-                        <!-- <출판사> 도서 등록 INPUT -->
-                        <input type="text" id="plus_publisher" name="plus_publisher" placeholder="출판사">
-                        <!-- <페이지 수> 도서 등록 INPUT -->
-                        <input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
-                        <!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
-                        <input type="submit" id="plus-submit" class="plus-button" value="확인">
-                    </div>
-				</form>
+				<div id="plus" class="book-plus">
+					<div class="cancel-container"><a href="#" class="cancel">
+							<img src="image/cancel.svg">
+						</a>
+					</div>
+					<form role="form" method="post" action="book_insert.php">
+						<div class="plus-input-container">
+							<p class="plus-ment">도서 등록을 위해<br>아래 정보를 입력해주세요.</p>
+							<!-- <책 제목> 도서 등록 INPUT -->
+							<input type="text" id="plus_title" name="plus_title" placeholder="책 제목">
+							<!-- <저자> 도서 등록 INPUT -->
+							<input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
+							<!-- <출판사> 도서 등록 INPUT -->
+							<input type="text" id="plus_publiser" name="plus_publisher" placeholder="출판사">
+							<!-- <페이지 수> 도서 등록 INPUT -->
+							<input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
+							<!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
+							<input type="submit" id="plus-submit" class="plus-button" value="확인">
+						</div>
+					</form>
 			</div>
-			<a href="#popup"><img src="image/user.svg" class="user" /></a>
+			<a href="#popup"><img src="image/user2.png" class="user" /></a>
 			<!-- 로그인 팝업 -->
 			<form method="post" action="logout_process.php">
 				<div class="login-popup" id="popup">
@@ -73,12 +73,13 @@ session_start();
 						</a>
 					</div>
 					
-					<img src="image/user.svg">
+					<img src="image/user2.png">
 					<?php 
 					$user = $_SESSION['useremail'];
-					$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+					$conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
 					$sql = "select num, name from user where email = '{$user}'";
 
+					mysqli_query($conn, "set names utf8;");
 					$result = mysqli_query($conn, $sql);
 					$num = mysqli_num_rows($result);
                 
@@ -247,40 +248,16 @@ session_start();
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
-		<form method="post" action="phrases_insert.php">
+        <form role="form" method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text" name="input-text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." name="input-text" id="input-text"></textarea>
 				<!-- 인덱스 출력 란 -->
-				<?php
-                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-				$user = $_SESSION['useremail'];
-                $sql = "select id, content from phrases where user = '{$user}' order by id asc";
-                $result = mysqli_query($conn, $sql);
-                $num = mysqli_num_rows($result);
-
-                for($i = 0 ; $i < $num ; $i++) {
-                    $re = mysqli_fetch_array($result);
-                ?>
-
-				<!-- 인상 깊은 구절 데이터 불러오는 부분 -->
-				<p id="confirm-text">
-					<tr class="body_tr">
-						<!-- 도서목록 <책 번호> -->
-						<td width="97"><?php echo $re[0] ?></td>
-						<!-- 도서목록 <책 제목> -->
-						<td width="500" style="text-align: left;"><?php echo $re[1] ?></td>
-					</tr>
-				</p>
-
-                <?php
-                }
-                ?>
-
+				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
 				<!-- 인덱스 <저장> 버튼 -->
 				<input class="save-btn" type="submit" name="save" value="저장" id="save">
 			</div>
-		</form>
+        </form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
@@ -320,42 +297,41 @@ session_start();
 			<div class="percent-box">
 
 				<div class="book">
+					<?php 
+					$user = $_SESSION['useremail'];
+					$conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
+					$sql = "select plus_title, plus_writer, plus_whole from add_book where user = '{$user}'";
+
+					mysqli_query($conn, "set names utf8;");
+					$result = mysqli_query($conn, $sql);
+					$num = mysqli_num_rows($result);
+                
+					for($i = 0 ; $i < $num ; $i++) {
+						$re = mysqli_fetch_array($result);
+					?>
+
+					
 					<!-- 아이콘 최대 크기임. -->
 					<!-- 책 아이콘 -->
-					<img src="image/book_icon.svg">
-					<div class="bookinfo-container">
-						<!-- 책 제목 -->
-						<h3 class="bookname">시선으로부터</h3>
-						<!-- 작가 -->
-						<p class="bookwriter">정세랑</p>
-						<div class="page-percent">
-							<!-- 책 읽은 페이지 수 INPUT -->
-							<p><input type="text" id="user-page" placeholder="000"></input>/
-								<!-- 책 총 페이지 수 -->
-								<span id="whole-page">350</span></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="book">
-					<img src="image/book_icon.svg">
-					<div class="bookinfo-container">
-						<h3 class="bookname">시선으로부터</h3>
-						<p class="bookwriter">정세랑</p>
-						<div class="page-percent">
-							<p><input type="text" id="user-page" placeholder="000">/<span id="whole-page">350</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="book">
-					<img src="image/book_icon.svg">
-					<div class="bookinfo-container">
-						<h3 class="bookname">시선으로부터</h3>
-						<p class="bookwriter">정세랑</p>
-						<div class="page-percent">
-							<p><input type="text" id="user-page" placeholder="000">/<span id="whole-page">350</span></p>
-						</div>
-					</div>
+					<form method="POST" action="pro_insert.php" enctype="multipart/form-data" id="pf" name="pf">
+						<img src="image/book_icon.svg">
+						<div class="bookinfo-container">
+							<!-- 책 제목 -->
+							<h3 class="bookname" name="title"><?php echo $re[0] ?></h3>
+							<!-- 작가 -->
+							<p class="bookwriter"><?php echo $re[1] ?></p>
+							<div class="page-percent">
+								<!-- 책 읽은 페이지 수 INPUT -->
+								<p><input type="text" id="user-page" name="user-page" placeholder="000"></input>/
+									<!-- 책 총 페이지 수 -->
+									<span id="whole-page"><?php echo $re[2] ?></span></p><br>
+									<button type="submit" class="pro-btn" id="pro-btn" onclick="document.pf.submit();">진행상황 등록</button>
+							</div>
+						</div>	
+					<?php
+					}
+					?>		
+					</form>
 				</div>
 			</div>
 			<svg xmlns="http://www.w3.org/2000/svg" width="18.948" height="33.895" viewBox="0 0 18.948 33.895">
@@ -382,10 +358,12 @@ session_start();
 			</thead>
 			<tbody>
                 <?php
-                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+                $conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
 				$user = $_SESSION['useremail'];
 
                 $sql = "select plus_title, plus_writer from add_book where user = '{$user}' order by id asc";
+
+				mysqli_query($conn, "set names utf8;");
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
@@ -399,15 +377,22 @@ session_start();
 					<td width="97"><?php echo $count ?></td>
 					<!-- 도서목록 <책 제목> -->
 					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[0] ?></a>
-					<button type="submit" class="pro-btn">진행상황 등록</button></td>
+					<button type="submit" class="pro-btn" id="pro-btn" onclick="btn_click();">진행상황 등록</button></td>
 					<!-- 도서목록 <읽은 날짜> -->
 					<td width="274"><?php echo $re[1] ?></td>
 				</tr>
                 <?php
                 }
                 ?>
+				
 			</tbody>
 		</table>
+		<script  type="text/javascript">
+			function btn_click() {
+				var inputString = prompt('현재 페이지를 입력하세요', 'ex) 80p 까지 읽었다면, 80'); 
+				alert(inputString);
+			});
+		</script>
 		<a href="#no_ptplo">팝업</a>
 		<div class="no_ptplo_popup" id="no_ptplo">
 			<div class="cancel-container"><a href="#book_list" class="cancel">
