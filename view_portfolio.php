@@ -22,11 +22,11 @@
 		<nav>
 			<a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
-				<li><a href="main.html#timer">타이머</a></li>
-				<li><a href="main.html#index">인덱스</a></li>
-				<li><a href="main.html#percent">독서진행률</a></li>
-				<li><a href="main.html#book_list">목록</a></li>
-				<li><a href="potfolio.html">독서포트폴리오</a></li>
+				<li><a href="main.php#timer">타이머</a></li>
+				<li><a href="main.php#index">인덱스</a></li>
+				<li><a href="main.php#percent">독서진행률</a></li>
+				<li><a href="main.php#book_list">목록</a></li>
+				<li><a href="potfolio.php">독서포트폴리오</a></li>
 			</ul>
 			<div class="search_data">
 				<!-- 메뉴바 도서 검색 INPUT -->
@@ -64,19 +64,36 @@
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<div class="login-popup" id="popup">
-				<div class="cancel-container"><a href="#" class="cancel">
-						<img src="image/cancel.svg">
-					</a>
+			<form method="post" action="logout_process.php">
+				<div class="login-popup" id="popup">
+					<div class="cancel-container"><a href="#" class="cancel">
+							<img src="image/cancel.svg">
+						</a>
+					</div>
+					
+					<img src="image/user2.png">
+					<?php 
+					$user = $_SESSION['useremail'];
+					$conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
+					$sql = "select num, name from user where email = '{$user}'";
+
+					mysqli_query($conn, "set names utf8;");
+					$result = mysqli_query($conn, $sql);
+					$num = mysqli_num_rows($result);
+                
+					for($i = 0 ; $i < $num ; $i++) {
+						$re = mysqli_fetch_array($result);
+					?>
+
+					<!-- LOGIN 이메일 INPUT -->
+					<label type="text" name="useremail" class="login-number"> <?php echo $re[0]."&nbsp;".$re[1]."님" ?> </label>
+					<!-- LOGIN BUTTON -->
+					<input type="submit" value="로그아웃" class="login-button"/>
+					<?php
+					}
+					?>
 				</div>
-				<img src="image/user.svg">
-				<!-- LOGIN 학번 이름 INPUT -->
-				<input type="text" class="login-number" placeholder="학번이름을 입력해주세요. ex) 1520 홍길동" />
-				<!-- LOGIN BUTTON -->
-				<button class="login-button">
-					<img src="image/login_btn.svg">
-				</button>
-			</div>
+			</form>
 		</nav>
 	</header>
 

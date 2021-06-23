@@ -22,11 +22,11 @@
 		<nav>
 			<a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
-				<li><a href="main.html#timer">타이머</a></li>
-				<li><a href="main.html#index">인덱스</a></li>
-				<li><a href="main.html#percent">독서진행률</a></li>
-				<li><a href="main.html#book_list">목록</a></li>
-				<li><a href="potfolio.html">독서포트폴리오</a></li>
+				<li><a href="main.php#timer">타이머</a></li>
+				<li><a href="main.php#index">인덱스</a></li>
+				<li><a href="main.php#percent">독서진행률</a></li>
+				<li><a href="main.v#book_list">목록</a></li>
+				<li><a href="potfolio.php">독서포트폴리오</a></li>
 			</ul>
 			<div class="search_data">
 				<!-- 메뉴바 도서 검색 INPUT -->
