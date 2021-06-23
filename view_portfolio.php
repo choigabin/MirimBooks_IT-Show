@@ -129,10 +129,12 @@
 			<div class="info">
 			<!-- 포트폴리오 디비에서 꺼내오기 -->
 			<?php
-				$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+				$conn = mysqli_connect('localhost', 'mibooks', 'P9bHVqNsezHNbSfE', 'mibooks');
 				$sql = "select p.title, p.writer, p.publisher, p.date, p.content
 						from add_book a, portfolio p
 						where a.plus_title = p.title;";
+
+				mysqli_query($conn,"set names utf8;");
 				$result = mysqli_query($conn, $sql);
 				$num = mysqli_num_rows($result);
 
