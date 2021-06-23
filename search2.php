@@ -72,7 +72,7 @@
     </header>
     <div class="search">
         <div class="search-bar">
-            <form method="POST" action="search_search.php" name="sf">
+        <form method="POST" action="search_search.php" name="sf">
                 <div class="search-input">
                     <!-- 도서 검색 INPUT -->
                     <input type="text" name="search-name" id="search-name" class="search-name" placeholder="검색을 원하는 카테고리를 입력하세요."/>
@@ -83,7 +83,7 @@
                 </div>
             </form>
             <div class="related-search-container">
-                <span class="related-search">카테고리  | </span>
+            <span class="related-search">카테고리  | </span>
                 <!-- 카테고리 -->
                 <span class="related-search-word"><a href="search.php">WEB</a></span>
                 <span class="related-search-word"><a href="search2.php">BACK TECH</a></span>
@@ -92,35 +92,67 @@
                 <span class="related-search-word"><a href="search5.php">고전 역사</a></span>
             </div>
         </div>
-        <!-- 소설 -->
         <div class="search-container">
             <div class="book">
-                <img src="image/book/누구나알기쉬운자바실전프로젝트.jpg" class="book-image" />
+                <!-- 책 이미지 -->
+                <img src="image/book/혼자공부하는C언어.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">누구나 알기 쉬운 자바 실전 프로젝트</p>
-                    <p class="description">자바 프로젝트부터 Spring & Mybatis 프로젝트까지
-                         핵심적인 스킬들</p>
+                    <p class="recommend">이호걸선생님의 강추 책!</p>
+                    <!-- 책 제목 -->
+                    <p class="title">혼자 공부하는 C언어</p>
+                    <!-- 책 설명 -->
+                    <p class="description">1:1로 과외하듯 쉽고 빠르게 배우는 C언어 
+                        프로그래밍 자습서 </p>
                 </div>
             </div>
             <div class="book">
-                <img src="image/book/두잇!웹사이트따라만들기.jpg" class="book-image" />
+                <img src="image/book/파이썬머신러닝완벽가이드.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">DO IT! 웹사이트 따라 만들기</p>
-                    <p class="description">HTML, CSS, 자바스크립트부터 JQuery와 Ajax까지 
-                        웹 퍼블리싱에 대한 모든 것</p>
+                    <p class="recommend">민주리선생님의 강추 책!</p>
+                    <p class="title">파이썬 머신러닝 완벽 가이드</p>
+                    <p class="description">다양한 캐글 예제와 함께 배우는 기초 알고리즘과
+                         최신 기법</p>
                 </div>
             </div>
             <div class="book">
-                <img src="image/book/리액트를다루는기술.jpg" class="book-image" />
+                <img src="image/book/두잇!데이터분석을위한판다스입문.jpg" class="book-image" />
+                <div class="info">
+                    <p class="recommend">민주리선생님의 강추 책!</p>
+                    <p class="title">DO IT! 데이터 분석을 위한 판다스 입문</p>
+                    <p class="description">테슬라 주식, 우버 택시 등 86개의 예제로 익히는 
+                        판다스의 기본 </p>
+                    </p>
+                </div>
+            </div>
+            <div class="book">
+                <img src="image/book/밑바닥부터시작된딥러닝1.jpg" class="book-image" />
+                <div class="info">
+                    <p class="recommend">민주리선생님의 강추 책!</p>
+                    <p class="title">밑바닥부터 시작하는 딥러닝</p>
+                    <p class="description">파이썬으로 익히는 딥러닝 이론과 구현, 
+                        가장 쉬운 딥러닝 입문서</p>
+                </div>
+            </div>
+            <div class="book">
+                <img src="image/book/만들면서배우는코틀린안드로이드프로그래밍.jpg" class="book-image" />
                 <div class="info">
                     <p class="recommend">유병석선생님의 강추 책!</p>
-                    <p class="title">리액트를 다루는 기술</p>
-                    <p class="description">기본기를 꼼꼼하게! 실전에서 리액트를 효과적으로 
-                        활용하는 방법</p>
+                    <p class="title">코틀린 안드로이드 프로그래밍</p>
+                    <p class="description">유병석선생님께서 직접 집필하신 안드로이드 프로그래밍
+                        교과서!</p>
                 </div>
             </div>
+            <div class="book">
+                <img src="image/book/컴퓨터프로그램의구조와해석.jpg" class="book-image" />
+                <div class="info">
+                    <p class="recommend">유병석선생님의 강추 책!</p>
+                    <p class="title">컴퓨터 프로그램의 구조와 해석</p>
+                    <p class="description">프로그래밍이 무엇인가 돌아보게 해주는 MIT의 
+                        컴퓨터과학 입문 교과서</p>
+                </div>
+            </div>
+            
+            
         </div>
     </div>
     <footer>

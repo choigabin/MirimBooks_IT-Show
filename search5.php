@@ -72,7 +72,7 @@
     </header>
     <div class="search">
         <div class="search-bar">
-            <form method="POST" action="search_search.php" name="sf">
+        <form method="POST" action="search_search.php" name="sf">
                 <div class="search-input">
                     <!-- 도서 검색 INPUT -->
                     <input type="text" name="search-name" id="search-name" class="search-name" placeholder="검색을 원하는 카테고리를 입력하세요."/>
@@ -83,7 +83,7 @@
                 </div>
             </form>
             <div class="related-search-container">
-                <span class="related-search">카테고리  | </span>
+            <span class="related-search">카테고리  | </span>
                 <!-- 카테고리 -->
                 <span class="related-search-word"><a href="search.php">WEB</a></span>
                 <span class="related-search-word"><a href="search2.php">BACK TECH</a></span>
@@ -92,33 +92,23 @@
                 <span class="related-search-word"><a href="search5.php">고전 역사</a></span>
             </div>
         </div>
-        <!-- 소설 -->
         <div class="search-container">
-            <div class="book">
-                <img src="image/book/누구나알기쉬운자바실전프로젝트.jpg" class="book-image" />
+        <div class="book">
+                <img src="image/book/오뒷세이아.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">누구나 알기 쉬운 자바 실전 프로젝트</p>
-                    <p class="description">자바 프로젝트부터 Spring & Mybatis 프로젝트까지
-                         핵심적인 스킬들</p>
+                    <p class="recommend">최영진선생님의 강추 책!</p>
+                    <p class="title">오뒷세이아</p>
+                    <p class="description">기원전 700년 경 호메로스가 쓴 세상에서
+                         가장 오래된 서사시</p>
                 </div>
             </div>
             <div class="book">
-                <img src="image/book/두잇!웹사이트따라만들기.jpg" class="book-image" />
+                <img src="image/book/사피엔스.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">DO IT! 웹사이트 따라 만들기</p>
-                    <p class="description">HTML, CSS, 자바스크립트부터 JQuery와 Ajax까지 
-                        웹 퍼블리싱에 대한 모든 것</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/book/리액트를다루는기술.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">유병석선생님의 강추 책!</p>
-                    <p class="title">리액트를 다루는 기술</p>
-                    <p class="description">기본기를 꼼꼼하게! 실전에서 리액트를 효과적으로 
-                        활용하는 방법</p>
+                    <p class="recommend">김영철선생님의 강추 책!</p>
+                    <p class="title">사피엔스</p>
+                    <p class="description">유인원에서 사이보그까지, 인간 역사의 
+                        대담하고 위대한 질문</p>
                 </div>
             </div>
         </div>

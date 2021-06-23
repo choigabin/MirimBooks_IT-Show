@@ -72,7 +72,7 @@
     </header>
     <div class="search">
         <div class="search-bar">
-            <form method="POST" action="search_search.php" name="sf">
+        <form method="POST" action="search_search.php" name="sf">
                 <div class="search-input">
                     <!-- 도서 검색 INPUT -->
                     <input type="text" name="search-name" id="search-name" class="search-name" placeholder="검색을 원하는 카테고리를 입력하세요."/>
@@ -83,7 +83,7 @@
                 </div>
             </form>
             <div class="related-search-container">
-                <span class="related-search">카테고리  | </span>
+            <span class="related-search">카테고리  | </span>
                 <!-- 카테고리 -->
                 <span class="related-search-word"><a href="search.php">WEB</a></span>
                 <span class="related-search-word"><a href="search2.php">BACK TECH</a></span>
@@ -92,33 +92,23 @@
                 <span class="related-search-word"><a href="search5.php">고전 역사</a></span>
             </div>
         </div>
-        <!-- 소설 -->
         <div class="search-container">
-            <div class="book">
-                <img src="image/book/누구나알기쉬운자바실전프로젝트.jpg" class="book-image" />
+        <div class="book">
+                <img src="image/book/마지막몰입나를넘어서는힘.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">누구나 알기 쉬운 자바 실전 프로젝트</p>
-                    <p class="description">자바 프로젝트부터 Spring & Mybatis 프로젝트까지
-                         핵심적인 스킬들</p>
+                    <p class="recommend">민주리선생님의 강추 책!</p>
+                    <p class="title">마지막 몰입, 나를 넘어서는 힘</p>
+                    <p class="description">UN, 하버드, 구글… 세계 1%가 극찬한 두뇌 전문가 짐 퀵이
+                         전하는 잠재력 놀라운 힘</p>
                 </div>
             </div>
             <div class="book">
-                <img src="image/book/두잇!웹사이트따라만들기.jpg" class="book-image" />
+                <img src="image/book/트렌드코리아2021.jpg" class="book-image" />
                 <div class="info">
-                    <p class="recommend">백현정선생님의 강추 책!</p>
-                    <p class="title">DO IT! 웹사이트 따라 만들기</p>
-                    <p class="description">HTML, CSS, 자바스크립트부터 JQuery와 Ajax까지 
-                        웹 퍼블리싱에 대한 모든 것</p>
-                </div>
-            </div>
-            <div class="book">
-                <img src="image/book/리액트를다루는기술.jpg" class="book-image" />
-                <div class="info">
-                    <p class="recommend">유병석선생님의 강추 책!</p>
-                    <p class="title">리액트를 다루는 기술</p>
-                    <p class="description">기본기를 꼼꼼하게! 실전에서 리액트를 효과적으로 
-                        활용하는 방법</p>
+                    <p class="recommend">민주리선생님의 강추 책!</p>
+                    <p class="title">트렌드 코리아 2021</p>
+                    <p class="description">바이러스 경제, V-nomics(브이노믹스) 
+                        시대의 전략을 말하다</p>
                 </div>
             </div>
         </div>
