@@ -8,6 +8,7 @@
         <div class="plus-input-container">
             <p class="plus-ment"> 도서 정보 디비 등록폼 </p>
             <!-- 이미지 -->
+            <label for="file">Filename:</label>
             <input type="file" id="img" name="img">
             <!-- 선생님 -->
             <input type="text" id="teacher" name="teacher" placeholder="선생님">
