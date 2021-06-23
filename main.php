@@ -245,7 +245,7 @@
 		<div class="input-container">
 			<div class="input-output-container">
 				<!-- 인덱스 출력 란 -->
-				<div class="output-box">
+				<div class="output-box input-box">
 					<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
 				</div>
 				<!-- 인덱스 입력 란 -->
