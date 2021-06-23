@@ -248,16 +248,16 @@ session_start();
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
-        <form role="form" method="post" action="phrases_insert.php">
-			<div class="input-box">
-				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." name="input-text" id="input-text"></textarea>
-				<!-- 인덱스 출력 란 -->
-				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
-				<!-- 인덱스 <저장> 버튼 -->
-				<input class="save-btn" type="submit" name="save" value="저장" id="save">
-			</div>
-        </form>
+			<form role="form" method="post" action="phrases_insert.php">
+				<div class="input-box">
+					<!-- 인덱스 입력 란 -->
+					<textarea class="input-text" placeholder="여기에 내용을 입력하세요." name="input-text" id="input-text"></textarea>
+					<!-- 인덱스 출력 란 -->
+					<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
+					<!-- 인덱스 <저장> 버튼 -->
+					<input class="save-btn" type="submit" name="save" value="저장" id="save">
+				</div>
+			</form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
