@@ -1,6 +1,6 @@
+<!-- 포트폴리오 조회 화면 -->
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/potfolio.css">
@@ -20,7 +20,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="main.html"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="main.html#timer">타이머</a></li>
 				<li><a href="main.html#index">인덱스</a></li>
@@ -79,6 +79,44 @@
 			</div>
 		</nav>
 	</header>
+
+	<script>
+		// 테이블의 Row 클릭시 값 가져오기
+		$("#table-1 tr").click(function(){ 	
+
+		var str = ""
+		var tdArr = new Array();	// 배열 선언
+
+		// 현재 클릭된 Row(<tr>)
+		var tr = $(this);
+		var td = tr.children();
+
+		// tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+		console.log("클릭한 Row의 모든 데이터 : "+tr.text());
+
+		// 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+		td.each(function(i){
+			tdArr.push(td.eq(i).text());
+		});
+
+		console.log("배열에 담긴 값 : "+tdArr);
+
+		// td.eq(index)를 통해 값을 가져올 수도 있다.
+		var no = td.eq(0).text();
+		var userid = td.eq(1).text();
+		var name = td.eq(2).text();
+		var email = td.eq(3).text();
+
+
+		str +=	" * 클릭된 Row의 td값 = No. : <font color='red'>" + no + "</font>" +
+				", 아이디 : <font color='red'>" + userid + "</font>" +
+				", 이름 : <font color='red'>" + name + "</font>" +
+				", 이메일 : <font color='red'>" + email + "</font>";		
+
+		console.log(str);
+		});
+
+	</script>
 	<form role="form" method="post" action="portfolio_insert.php">
 		<div id="potfolio">
 			<div class="head-title">
@@ -87,32 +125,36 @@
 				<p class="description">책에서만 쓴 독서 포트폴리오를<br />
 					미북스에서 더욱 쉽게 수정하고, 작성해보세요.</p>
 			</div>
+
 			<div class="info">
+			<!-- 포트폴리오 디비에서 꺼내오기 -->
+			<?php
+				$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+				$sql = "select p.title, p.writer, p.publisher, p.date, p.content
+						from add_book a, portfolio p
+						where a.plus_title = p.title;";
+				$result = mysqli_query($conn, $sql);
+				$num = mysqli_num_rows($result);
+
+				$re = mysqli_fetch_array($result);
+			?>
 				<div class="title container">
-					<label for="title">책 제목</label>
-					<!-- 책 제목 INPUT-->
-					<input type="text" name="title" id="title" />
+					<label for="title">책 제목 &nbsp;<?php echo $re[0] ?> </label>
+					
 				</div>
 				<div class="writer container">
-					<label for="writer">저자</label>
-					<!-- 저자 INPUT -->
-					<input type="text" name="writer" id="writer" />
+					<label for="writer">저자 &nbsp;<?php echo $re[1] ?> </label>
 				</div>
 				<div class="publisher container">
-					<label for="publisher">출판사</label>
-					<!-- 출판사 INPUT -->
-					<input type="text" name="publisher" id="publisher" />
+					<label for="publisher">출판사 &nbsp;<?php echo $re[2] ?> </label>
 				</div>
 				<div class="date container">
-					<label for="date">읽은 날짜</label>
-					<!-- 읽은 날짜 INPUT -->
-					<input type="text" name="date" id="date" />
+					<label for="date">읽은 날짜 &nbsp;<?php echo $re[3] ?> </label>
 				</div>
 			</div>
 			<div class="main-container">
-				<!-- 독서 내용 입력 -->
-				<textarea name="content" placeholder="내용" id="content" class="textarea_size" 
-					onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"></textarea>
+				<textarea name="content" placeholder="내용" id="content" class="textarea_size"
+					onchange="cmaTextareaSize('content', 612);" onkeyup="cmaTextareaSize('main', 612);"><?php echo $re[4] ?></textarea>
 				<script>
 					cmaTextareaSize('content', 612);
 				</script>
@@ -125,6 +167,7 @@
 			</div>
 		</div>
 	</form>
+	<!-- FOOTER -->
 	<footer>
 		<div class="footer-container">
 			<div class="link-container">

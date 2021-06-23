@@ -194,7 +194,7 @@ input::placeholder {
 }
 .login-popup {
     width: 434px;
-    height: 620px;
+    height: 380px;
     border-radius: 34px;
     background: #FFFFFF;
     position: fixed;
@@ -216,22 +216,11 @@ input::placeholder {
     height: 116px;
 }
 .login-number {
-    width: 357px;
-    height: 57px;
-    border-radius: 27px;
-    border: 1px solid #707070;
+    font-size: 25px;
+    text-align: center;
     background: #FFFFFF;
     text-indent: 20px;
     margin-top: 25px;
-}
-.login-number:focus {
-    outline: none;
-}
-.login-number::placeholder {
-    font-size: 14px;
-    color: #000000;
-    opacity: 0.24;
-    font-weight: lighter;
 }
 .login-button {
     display: block;
@@ -589,6 +578,28 @@ percent-box svg {
 
 #book_list .title {
     padding-bottom: 70;
+}
+.pro-btn {
+	width: 90px;
+	height: 48px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+	color: black;
+	background: #F5F5F5;
+	border-radius: 34px;
+	float: right;
+	margin-right: 40px;
+	margin-top: -10px;
+	border: none;
+	font-weight: bold;
+}
+.pro-btn:hover {
+	color: white;
+	background: #386138;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.pro-btn:focus {
+	outline: none;
 }
 
 table {

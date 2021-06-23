@@ -1,8 +1,4 @@
 <!-- 로그인 화면 -->
-<?php
-session_start();
-?>
-
 <html lang="en">
 <head>
 	<meta charset='utf-8'>
@@ -10,7 +6,7 @@ session_start();
     <meta name="google-signin-client_id" content="365726543848-dv3of5359i4bukccdlbejqa5nbnbe1rt.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
 	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	<title>MIBOOKS</title>
 </head>
@@ -18,7 +14,7 @@ session_start();
 <body>
 	<header>
 		<nav>
-			<a href="main.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
+			<a href="main_login.php"><img src="image/mibooks_logo_wh.svg" class="logo_wh"></a>
 			<ul>
 				<li><a href="#timer">타이머</a></li>
 				<li><a href="#index">인덱스</a></li>
@@ -26,13 +22,11 @@ session_start();
 				<li><a href="#book_list">목록</a></li>
 				<li><a href="potfolio.html">독서포트폴리오</a></li>
 			</ul>
-			<form method="post" action="search.php">
-				<div class="search_data">
-					<!-- 메뉴바 도서 검색 INPUT -->
-					<input type="search" placeholder="도서 검색하러가기" name="input-search">
-					<a href="search.php"><img src="image/search.svg"></a>
-				</div>
-			</form>
+			<div class="search_data">
+				<!-- 메뉴바 도서 검색 INPUT -->
+				<input type="search" placeholder="관심 도서를 검색해주세요.">
+				<a href="search.html"><img src="image/search.svg"></a>
+			</div>
 			<a href="#plus"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
 					class="plus">
 					<g id="그룹_15" data-name="그룹 15" transform="translate(-1560 -15)">
@@ -56,7 +50,7 @@ session_start();
                         <!-- <저자> 도서 등록 INPUT -->
                         <input type="text" id="plus_writer" name="plus_writer" placeholder="저자">
                         <!-- <출판사> 도서 등록 INPUT -->
-                        <input type="text" id="plus_publisher" name="plus_publisher" placeholder="출판사">
+                        <input type="text" id="plus_publiser" name="plus_publiser" placeholder="출판사">
                         <!-- <페이지 수> 도서 등록 INPUT -->
                         <input type="text" id="plus_whole" name="plus_whole" placeholder="전체 페이지 수">
                         <!-- <확인 버튼> 도서 등록 INPUT SUBMIT -->
@@ -66,7 +60,7 @@ session_start();
 			</div>
 			<a href="#popup"><img src="image/user.svg" class="user" /></a>
 			<!-- 로그인 팝업 -->
-			<form method="post" action="logout_process.php">
+			<form method="post" action="login_session.php">
 				<div class="login-popup" id="popup">
 					<div class="cancel-container"><a href="#" class="cancel">
 							<img src="image/cancel.svg">
@@ -74,25 +68,13 @@ session_start();
 					</div>
 					
 					<img src="image/user.svg">
-					<?php 
-					$user = $_SESSION['useremail'];
-					$conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-					$sql = "select num, name from user where email = '{$user}'";
-
-					$result = mysqli_query($conn, $sql);
-					$num = mysqli_num_rows($result);
-                
-					for($i = 0 ; $i < $num ; $i++) {
-						$re = mysqli_fetch_array($result);
-					?>
-
 					<!-- LOGIN 이메일 INPUT -->
-					<label type="text" name="useremail" class="login-number"> <?php echo $re[0]."&nbsp;".$re[1]."님" ?> </label>
+					<input type="text" name="useremail" class="login-number" placeholder="이메일을 입력해주세요."/>
+					<!-- LOGIN 비밀번호 INPUT -->
+					<input type="password" name="userpasswd" class="login-number" placeholder="비밀번호를 입력해주세요."/>
 					<!-- LOGIN BUTTON -->
-					<input type="submit" value="로그아웃" class="login-button"/>
-					<?php
-					}
-					?>
+					<input type="submit" value="로그인" class="login-button"/>
+					
 				</div>
 			</form>
 		</nav>
@@ -151,7 +133,7 @@ session_start();
 				<li><label for="slide03"></label></li>
 			</ul>
 		</div>
-	</div>   
+	</div>
 
 	<!-- timer -->
 	<div id="timer" class="timer_area">
@@ -178,14 +160,62 @@ session_start();
 		</div>
 		<div class="container">
 			<div>
-				<button onclick="start()" class="btn start">
-					<img src="image/start_off.svg" id="start" class="start">
+				<button onclick="start()" id="start" class="btn start">
+					<!-- <img src="image/stop_off.svg" class="start"> -->
+					<svg id="start_off" data-name="구성 요소 2 – 1" xmlns="http://www.w3.org/2000/svg" width="98"
+						height="97" viewBox="0 0 98 97">
+						<g id="start_circle" data-name="타원 31" fill="none" stroke="#386138" stroke-width="4">
+							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
+							<ellipse id="start_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
+						</g>
+						<line id="start_line_1" data-name="선 51" y2="37" transform="translate(39 30)" fill="none"
+							stroke="#386138" stroke-linecap="round" stroke-width="6" />
+						<line id="start_line_2" data-name="선 52" y2="37" transform="translate(59 30)" fill="none"
+							stroke="#386138" stroke-linecap="round" stroke-width="6" />
+					</svg>
+
 				</button>
-				<button onclick="stop()" class="btn stop">
-					<img src="image/stop_off.svg" id="stop">
+				<button onclick="stop()" id="stop" class="btn stop">
+					<!-- <img src="image/start_off.svg" alt=""> -->
+					<svg id="stop_off" data-name="구성 요소 3 – 1" xmlns="http://www.w3.org/2000/svg" width="98" height="97"
+						viewBox="0 0 98 97">
+						<g id="stop_circle" data-name="타원 21" fill="none" stroke="#386138" stroke-width="4">
+							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
+							<ellipse id="stop_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
+						</g>
+						<rect id="stop_square" data-name="사각형 42" width="33" height="32" rx="5"
+							transform="translate(33 33)" fill="#386138" />
+					</svg>
+
 				</button>
-				<button onclick="reset()"  class="btn stop">
-					<img src="image/reset_off.svg" id="reset">
+				<button onclick="reset()" id="reset" class="btn stop">
+					<!-- <img src="image/reset_off.svg" alt=""> -->
+					<svg id="reset_off" data-name="구성 요소 4 – 1" xmlns="http://www.w3.org/2000/svg" width="98"
+						height="97" viewBox="0 0 98 97">
+						<g id="reset_circle" data-name="타원 22" fill="none" stroke="#386138" stroke-width="4">
+							<ellipse cx="49" cy="48.5" rx="49" ry="48.5" stroke="none" />
+							<ellipse id="reset_circle_in" cx="49" cy="48.5" rx="47" ry="46.5" fill="none" />
+						</g>
+						<g id="그룹_7" data-name="그룹 7" transform="translate(35.514 16.889) rotate(14)">
+							<path id="reset_in_1" data-name="패스 14"
+								d="M39.05,0A19.525,19.525,0,0,1,19.525,19.525,19.525,19.525,0,0,1,0,0"
+								transform="translate(0 27.672)" fill="none" stroke="#386138" stroke-linejoin="round"
+								stroke-width="8" />
+							<path id="reset_in_2" data-name="패스 15"
+								d="M19.518,0A19.523,19.523,0,0,0,2.535,10.05,19.835,19.835,0,0,0,0,19.83"
+								transform="translate(0.007 8.147)" fill="none" stroke="#386138" stroke-linejoin="round"
+								stroke-width="8" />
+							<g id="reset_in_3-1" data-name="다각형 1" transform="translate(32.749) rotate(87)"
+								fill="#707070">
+								<path
+									d="M 8.750229835510254 9.857437133789063 L 6.839385986328125 9.857437133789063 L 7.794807434082031 8.158906936645508 L 8.750229835510254 9.857437133789063 Z"
+									stroke="none" />
+								<path id="reset_in_3"
+									d="M 7.79480504989624 -5.7220458984375e-06 L 15.5896053314209 13.8574275970459 L 4.76837158203125e-06 13.8574275970459 L 7.79480504989624 -5.7220458984375e-06 Z"
+									stroke="none" fill="#386138" />
+							</g>
+						</g>
+					</svg>
 				</button>
 			</div>
 		</div>
@@ -199,14 +229,39 @@ session_start();
 			<p class="discription">인상 깊은 구절이나 페이지를 적어두세요.</p>
 		</div>
 		<div class="input-container">
+		<form method="post" action="phrases_insert.php">
 			<div class="input-box">
 				<!-- 인덱스 입력 란 -->
-				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text"></textarea>
+				<textarea class="input-text" placeholder="여기에 내용을 입력하세요." id="input-text" name="input-text"></textarea>
 				<!-- 인덱스 출력 란 -->
-				<p id="confirm-text">여기에 사용자가 입력한 인덱스가 출력됩니다.</p>
+				<?php
+                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
+
+                $sql = "select id, content from phrases order by id asc";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+
+                for($i = 0 ; $i < $num ; $i++) {
+                    $re = mysqli_fetch_array($result);
+                ?>
+
+				<!-- 인상 깊은 구절 데이터 불러오는 부분 -->
+				<p id="confirm-text">
+					<tr class="body_tr">
+						<!-- 도서목록 <책 번호> -->
+						<td width="97"><?php echo $re[0] ?></td>
+						<!-- 도서목록 <책 제목> -->
+						<td width="500" style="text-align: left;"><?php echo $re[1] ?></td>
+					</tr>
+				</p>
+
+                <?php
+                }
+                ?>
 				<!-- 인덱스 <저장> 버튼 -->
-				<input class="save-btn" type="submit" name="save" value="저장" id="save">
+				<input class="save-btn" type="submit" name="save" value="저장" id="save" onclick = "location.href = 'phrases_insert.php'">
 			</div>
+		</form>
 			<div class="button-container">
 				<button class="button-write" id="write">
 					<svg xmlns="http://www.w3.org/2000/svg" width="35.998" height="35.999" viewBox="0 0 35.998 35.999">
@@ -244,7 +299,6 @@ session_start();
 					stroke-linejoin="round" stroke-width="4" opacity="0.29" />
 			</svg>
 			<div class="percent-box">
-
 				<div class="book">
 					<!-- 아이콘 최대 크기임. -->
 					<!-- 책 아이콘 -->
@@ -262,7 +316,6 @@ session_start();
 						</div>
 					</div>
 				</div>
-
 				<div class="book">
 					<img src="image/book_icon.svg">
 					<div class="bookinfo-container">
@@ -307,31 +360,14 @@ session_start();
 				</tr>
 			</thead>
 			<tbody>
-                <?php
-                $conn = mysqli_connect('localhost', 'root', '100412', 'mibooks');
-				$user = $_SESSION['useremail'];
-
-                $sql = "select plus_title, plus_writer from add_book where user = '{$user}' order by id asc";
-                $result = mysqli_query($conn, $sql);
-                $num = mysqli_num_rows($result);
-
-                for($i = 0 ; $i < $num ; $i++) {
-                    $re = mysqli_fetch_array($result);
-					$count = 1
-                ?>
-
 				<tr class="body_tr">
 					<!-- 도서목록 <책 번호> -->
-					<td width="97"><?php echo $count ?></td>
+					<td width="97"></td>
 					<!-- 도서목록 <책 제목> -->
-					<td width="809" style="text-align: left;"><a href="view_portfolio.php"><?php echo $re[0] ?></a>
-					<button type="submit" class="pro-btn">진행상황 등록</button></td>
+					<td width="809" style="text-align: left;"><a href="view_portfolio.php"></a></td>
 					<!-- 도서목록 <읽은 날짜> -->
-					<td width="274"><?php echo $re[1] ?></td>
+					<td width="274"></td>
 				</tr>
-                <?php
-                }
-                ?>
 			</tbody>
 		</table>
 		<a href="#no_ptplo">팝업</a>
@@ -379,4 +415,5 @@ session_start();
 	<script type="text/javascript" src="js/timer.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>
