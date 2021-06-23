@@ -41,8 +41,8 @@ function start() {
     t = setInterval(startTimer, 1000);
     document.getElementById('start').disabled = true;
 
-    start_img.src = "image/start_on.png";
-    stop_img.src = "image/stop_off.png";
+    start_img.src = "image/start_on.svg";
+    stop_img.src = "image/stop_off.svg";
 }
 
 //stop 
@@ -50,8 +50,8 @@ function stop() {
     clearInterval(t);
     document.getElementById('start').disabled = false;
 
-    start_img.src = "image/start_off.png";
-    stop_img.src = "image/stop_on.png";
+    start_img.src = "image/start_off.svg";
+    stop_img.src = "image/stop_on.svg";
 }
 
 //reset
@@ -64,7 +64,7 @@ function reset() {
     document.getElementById('min').innerHTML = '00';
     document.getElementById('hr').innerHTML = '00';
 
-    start_img.src = "image/start_off.png";
-    stop_img.src = "image/stop_off.png";
+    start_img.src = "image/start_off.svg";
+    stop_img.src = "image/stop_off.svg";
 
 }
