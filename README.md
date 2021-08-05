@@ -1,5 +1,5 @@
 # MirimBooks_IT 
-2021 New Media IT Show 졸업 전시 출품작
+2021 New Media IT Show 졸업 전시 출품작 <br>
 미림인을 위한 독서 습관 및 포트폴리오 관리 웹 '미북스' 🎨
 
 - 회원가입 및 로그인 기능 
